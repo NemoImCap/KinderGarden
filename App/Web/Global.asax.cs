@@ -16,6 +16,7 @@ namespace Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ConfigContainer.Configure();
         }
     }
 }
