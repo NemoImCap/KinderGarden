@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="container">
+
+    <div class="row">
+        <div class="col-md-2 col-sm-3">
+            <div class="sidebar-nav">
+                <h4>Pages</h4>
+                <ul class="nav nav-pills nav-stacked">
+                    <li>
+                        <a class="btn btn-info btn-sm" href="">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn btn-info btn-sm" href="">
+                            Kindergardens
+                        </a>
+                    </li>
+                    <li><a href="" class="btn btn-info btn-sm">Children</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10 col-sm-9">
+            @RenderBody()
+        </div>
+
+    </div>
+
+</section>

@@ -35,3 +35,10 @@ E:\Deploy\App\Web\bin\ru\System.Web.WebPages.Razor.resources.dll
 E:\Deploy\App\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 E:\Deploy\App\Web\obj\Debug\Web.dll
 E:\Deploy\App\Web\obj\Debug\Web.pdb
+E:\Deploy\App\Web\bin\Antlr3.Runtime.dll
+E:\Deploy\App\Web\bin\Newtonsoft.Json.dll
+E:\Deploy\App\Web\bin\System.Web.Optimization.dll
+E:\Deploy\App\Web\bin\WebGrease.dll
+E:\Deploy\App\Web\bin\Antlr3.Runtime.pdb
+E:\Deploy\App\Web\bin\Newtonsoft.Json.xml
+E:\Deploy\App\Web\bin\System.Web.Optimization.xml
