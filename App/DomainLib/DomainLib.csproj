@@ -83,6 +83,11 @@
     <Compile Include="Context\EfContext.cs" />
     <Compile Include="Domain\Models\Child.cs" />
     <Compile Include="Domain\Models\Kindergarden.cs" />
+    <Compile Include="Migrations\201702090958525_InitDb.cs" />
+    <Compile Include="Migrations\201702090958525_InitDb.Designer.cs">
+      <DependentUpon>201702090958525_InitDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
@@ -90,6 +95,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201702090958525_InitDb.resx">
+      <DependentUpon>201702090958525_InitDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -4,84 +4,122 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
+using DomainLib.Context;
 
 namespace DomainLib.Repository
 {
     public class Repository <T>: IDisposable, IRepository<T> where T : class
     {
-        public void Dispose()
+        private EfContext Context { get; set; }
+
+
+        public Repository(EfContext context)
+        {
+            Context = context;
+        }
+
+        void IDisposable.Dispose()
+        {
+            if (Context != null) Context.Dispose();
+        }
+
+        void IRepository<T>.Add(T entity)
+        {
+            Context.Set<T>().Add(entity);
+            Context.Entry(entity).State = System.Data.Entity.EntityState.Added;
+
+            Context.SaveChanges();
+        }
+
+
+        void IRepository<T>.AddOrUpdate(T entity)
+        {
+            var current = Context.Set<T>().Find(entity);
+            if (current == null)
+            {
+                Context.Set<T>().Add(entity);
+                Context.Entry(entity).State = System.Data.Entity.EntityState.Added;
+            }
+            else
+            {
+                Context.Set<T>().Attach(entity);
+                Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            }
+
+            Context.SaveChanges();
+        }
+
+        void IRepository<T>.Update(T entity)
+        {
+            Context.Set<T>().Attach(entity);
+            Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+
+            Context.SaveChanges();
+        }
+
+        void IRepository<T>.Remove(T entity)
+        {
+            Context.Set<T>().Remove(entity);
+            Context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+
+            Context.SaveChanges();
+        }
+
+        void IRepository<T>.Remove(IEnumerable<T> entities)
+        {
+            var context = Context.Set<T>();
+            foreach (var item in entities)
+            {
+                context.Remove(item);
+                Context.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+            }
+
+            Context.SaveChanges();
+        }
+
+        public T AddEntity(T Entity)
         {
             throw new NotImplementedException();
         }
 
-        public void Add(T entity)
+        T IRepository<T>.Find(T entity)
         {
-            throw new NotImplementedException();
+            return Context.Set<T>().Find(entity);
         }
 
-        public void AddOrUpdate(T entity)
+        IEnumerable<T> IRepository<T>.GetAll()
         {
-            throw new NotImplementedException();
+            return Context.Set<T>();
         }
 
-        public void Update(T entity)
+        IEnumerable<T> IRepository<T>.Where(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return Context.Set<T>().Where(predicate);
         }
 
-        public void Remove(T entity)
+        bool IRepository<T>.Any(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return Context.Set<T>().Any(predicate);
         }
 
-        public void Remove(IEnumerable<T> entities)
+        T IRepository<T>.FirstOrDefault(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return Context.Set<T>().FirstOrDefault(predicate);
         }
 
-        public T AddEntity(T entity)
+        int IRepository<T>.Count(Expression<Func<T, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return Context.Set<T>().Count(predicate);
         }
 
-        public T Find(T entity)
+        IQueryable<T> IRepository<T>.Include(string field)
         {
-            throw new NotImplementedException();
+            return Context.Set<T>().Include(field);
         }
 
-        public IEnumerable<T> GetAll()
+        IQueryable<T> IRepository<T>.Take(int count)
         {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<T> Include(string field)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IQueryable<T> Take(int count)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> Where(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T FirstOrDefault(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool Any(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int Count(Expression<Func<T, bool>> predicate)
-        {
-            throw new NotImplementedException();
+            return Context.Set<T>().Take(count);
         }
     }
 }
