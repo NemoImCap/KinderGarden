@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_SidebarNavigation.cshtml";
+    ViewBag.Title = "Kindergartens";
+    
+}
+<div class="" ng-controller="KindergartenController">
+    <h4>Kindergartens Page</h4>
+    <div class="form-group">
+        <button class="btn btn-sm btn-success">Add Kindergarten</button>
+    </div>
+    <div id="filter-panel" class="filter-panel">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label >Kindergarten's number:</label>
+                        <input type="number" class="form-control" min="0" ng-model="gridModel.number" placeholder="Enter Adress">
+                    </div>
+                    <div class="form-group">
+                        <label>Adress:</label>
+                        <input type="text" class="form-control" ng-model="gridModel.search" placeholder="Enter Adress">
+                    </div>
+                    <button class="btn btn-success btn-sm" ng-click="LoadData()">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>    
+    <div class="clearfix"></div>
+    <table st-table="Kindergartens" class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th nowrap="">Address</th>
+                <th nowrap="">Number</th>
+                <th nowrap="">Children</th>
+                <th nowrap="">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="garten in Kindergartens" class="animated fadeIn">
+                <td>
+                    <strong>{{garten.Address}}</strong>
+                </td>
+                <td>
+                    {{garten.Number}}
+                </td>
+                <td>
+                    <a class="btn btn-info btn-sm" href=""> Children</a>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn btn-sm btn-warning">Update</button><button class="btn btn-sm btn-danger">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-center" colspan="12">
+                    <ul uib-pagination total-items="50" max-size="2" ng-model="gridModel.page" ng-change="LoadData()" direction-links="false"></ul>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+

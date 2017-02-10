@@ -18,4 +18,16 @@
             var url = currentUrl.indexOf("localhost") > -1 ? "http://localhost:57084/" : "";
             return url;
         },
+        "GetKindergartens": "/api/Kindergarden/GetKinderGardens/?",
+        "GetKindergartensNumbers": '/api/Kindergarden/GetKindergartensNumbers'
     });
+
+//Services
+
+core.service('api', Api);
+core.service('spinnerService', spinnerService);
+core.service('kindergartenService', kindergartenService);
+
+spinnerService.$inject = ['$timeout', '$busy'];
+kindergartenService.$inject = ["api", "appSettings", "spinnerService"];
+Api.$inject = ['$http', '$q', 'appSettings', '$window'];

@@ -140,7 +140,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\angular.js" />
     <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-tpls-0.12.0.min.js" />
     <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-tpls-0.14.3.js" />
     <Content Include="Assets\framework\angular\angular-local-storage.js" />
@@ -167,7 +166,11 @@
     <Content Include="Areas\Api\Views\web.config" />
     <Content Include="Assets\framework\angular\angular.min.js.map" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="Scripts\angular\common\services\api.js" />
+    <Content Include="Scripts\angular\common\services\kindergartenService.js" />
+    <Content Include="Scripts\angular\common\services\spinnerService.js" />
     <Content Include="Scripts\angular\controllers\AppController.js" />
+    <Content Include="Scripts\angular\controllers\KindergartenController.js" />
     <Content Include="Scripts\angular\main\config.js" />
     <Content Include="Scripts\angular\main\core.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -207,6 +210,7 @@
     <Content Include="Views\Shared\Navigation.cshtml" />
     <Content Include="Views\Shared\_SidebarNavigation.cshtml" />
     <Content Include="Views\Kindergarden\CreateKindergarden.cshtml" />
+    <Content Include="Views\Kindergarden\Kindergartens.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -220,7 +224,6 @@
     <Folder Include="Areas\Api\Views\Shared\" />
     <Folder Include="Models\" />
     <Folder Include="Scripts\angular\common\directives\" />
-    <Folder Include="Scripts\angular\common\services\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DomainLib\DomainLib.csproj">

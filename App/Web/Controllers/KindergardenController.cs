@@ -13,5 +13,10 @@ namespace Web.Controllers
         {
             return PartialView();
         }
+
+        public ActionResult Kindergartens()
+        {
+            return View();
+        }
     }
 }

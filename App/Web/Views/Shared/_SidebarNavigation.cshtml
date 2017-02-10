@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<section class="container">
+<section class="page-content container">
 
     <div class="row">
         <div class="col-md-2 col-sm-3">
@@ -10,16 +10,16 @@
                 <h4>Pages</h4>
                 <ul class="nav nav-pills nav-stacked">
                     <li>
-                        <a class="btn btn-info btn-sm" href="">
+                        <a class="btn btn-default btn-sm" href="@Url.Action("Index","Home")">
                             Home
                         </a>
                     </li>
                     <li>
-                        <a class="btn btn-info btn-sm" href="">
+                        <a class="btn btn-default btn-sm" href="@Url.Action("Kindergartens","Kindergarden")">
                             Kindergardens
                         </a>
                     </li>
-                    <li><a href="" class="btn btn-info btn-sm">Children</a></li>
+                    <li><a href="" class="btn btn-default btn-sm">Children</a></li>
                 </ul>
             </div>
         </div>
