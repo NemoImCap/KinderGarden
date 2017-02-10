@@ -7,18 +7,22 @@
     <title>@ViewBag.Title – приложение ASP.NET</title>
     @Styles.Render("~/Content/css")
 </head>
-<body>
+<body ng-app="app" ng-controller="AppController" ng-cloak>
     @Html.Partial("Navigation")
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year – приложение ASP.NET</p>
-        </footer>
+    </div>
+    <div class="container-fluid">
+        <div id="footer">
+        </div>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Angular/")
+    @Scripts.Render("~/AngularScript/")
+    @Scripts.Render("~/AngularApp/")
     @RenderSection("scripts", required: false)
 </body>
 </html>
