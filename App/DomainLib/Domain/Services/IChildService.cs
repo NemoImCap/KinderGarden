@@ -17,7 +17,7 @@ public interface IChildService
 
 	void DeleteChild(Child child);
 
-	IEnumerable<Child> GetChildren(string name, string surname, int age);
+	IEnumerable<Child> GetChildren(string search = "", int age = 0, int page = 1);
 
 	Child GetChildById(int id);
 

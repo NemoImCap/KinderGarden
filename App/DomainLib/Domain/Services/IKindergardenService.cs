@@ -19,7 +19,7 @@ public interface IKindergardenService
 
 	void UpdateKindergarden(Kindergarden kindergarden);
 
-	IEnumerable<Kindergarden> GetKindergardens(int id, string address);
+	IEnumerable<Kindergarden> GetKindergardens(string address = "", int number = 0, int page = 0);
 
 }
 

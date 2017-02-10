@@ -1286,40 +1286,72 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="046d9c6a-d1e9-43d9-aaac-96551ff08a9c"
-                  name="id"
-                  direction="In">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="Domain.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="183faceb-fd7a-4c4e-ac60-9e2da8ce419f"
-                  name="address"
-                  direction="In">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="Domain.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
                   Id="4aa1a3c6-1f2b-4c86-beea-2b0322829dd0"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="520292c2-83ff-4881-abb1-bcf4453a9a9d"
                       LastKnownName="IEnumerable&lt;Kindergarden&gt;"
                       LastKnownLocation="Domain.uml" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ca4a9a2c-e0da-476f-a606-04202774a6e7"
+                  name="address"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2d9c81cd-85cd-4894-b48e-6e97da8c8f48"
+                      LastKnownName="string"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="1e3d6d80-0c80-455b-a7d9-0ac353a65baf"
+                      value="&quot;&quot;" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="356893ca-f51e-413e-b554-1c622e842917"
+                  name="number"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="49625410-de3d-49e7-9bea-b98e40915dc8"
+                      LastKnownName="int"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="61d9dba5-1b99-4f33-b700-b634ff29249c"
+                      value="0" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c514884b-bbba-491a-bb24-2cf556a37226"
+                  name="page"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="49625410-de3d-49e7-9bea-b98e40915dc8"
+                      LastKnownName="int"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="bf01085d-4700-4ad6-9fa3-a8f61942d536"
+                      value="0" />
+                  </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1658,53 +1690,72 @@
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="eeb6e4d5-f73e-49f3-a780-38a9d7d77214"
-                  name="name"
-                  direction="In">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="Domain.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="d475eace-d13e-4285-b19d-4f190ef33f70"
-                  name="surname"
-                  direction="In">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
-                      LastKnownName="String"
-                      LastKnownLocation="Domain.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="d0e60d54-ad0a-47da-b1dc-44556c6b6675"
-                  name="age"
-                  direction="In">
-                  <type_NamedElement>
-                    <primitiveTypeMoniker
-                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
-                      LastKnownName="Integer"
-                      LastKnownLocation="Domain.uml" />
-                  </type_NamedElement>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
                   Id="c25ea4ec-ae58-48fe-baa2-ca07ff494749"
-                  direction="Return">
+                  direction="Return"
+                  isUnique="false">
                   <type_NamedElement>
                     <undefinedTypeMoniker
                       Id="9b448007-f5f8-496c-850e-56a81f5b51c2"
                       LastKnownName="IEnumerable&lt;Child&gt;"
                       LastKnownLocation="Domain.uml" />
                   </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a1aa2736-899a-4476-a23e-b3fe8af5d758"
+                  name="search"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="2d9c81cd-85cd-4894-b48e-6e97da8c8f48"
+                      LastKnownName="string"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="e0468c55-3b70-440c-b3cc-2f84534d7f87"
+                      value="&quot;&quot;" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f27a03f-c8f4-4be7-8820-cf88d0d9c052"
+                  name="age"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="49625410-de3d-49e7-9bea-b98e40915dc8"
+                      LastKnownName="int"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="376691ed-39d4-4e95-b4c0-91dcd1fe840b"
+                      value="0" />
+                  </defaultValue>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6"
+                  name="page"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="49625410-de3d-49e7-9bea-b98e40915dc8"
+                      LastKnownName="int"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                  <defaultValue>
+                    <literalString
+                      Id="782e88f3-2783-4ad1-a721-773ce20bc377"
+                      value="1" />
+                  </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
             </ownedParameters>
@@ -1807,6 +1858,21 @@
       <undefinedType
         Id="520292c2-83ff-4881-abb1-bcf4453a9a9d"
         name="IEnumerable&lt;Kindergarden&gt;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="e68a2868-abd1-45c7-914e-776abb931312"
+        name="String = &quot;&quot;" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="2d9c81cd-85cd-4894-b48e-6e97da8c8f48"
+        name="string" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="49625410-de3d-49e7-9bea-b98e40915dc8"
+        name="int" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

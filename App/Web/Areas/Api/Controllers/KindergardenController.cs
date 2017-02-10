@@ -21,5 +21,11 @@ namespace Web.Areas.Api.Controllers
         {
             return Json("Hello");
         }
+
+        public IHttpActionResult GetKindergardens([FromUri] string search = "", int number = 0, int page = 1)
+        {
+            var items = _kindergardenService.GetKindergardens(search, number, page);
+            return Json(items);
+        }
     }
 }

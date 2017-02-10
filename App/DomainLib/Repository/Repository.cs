@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DomainLib.Context;
+using LinqKit;
 
 namespace DomainLib.Repository
 {
@@ -89,17 +91,17 @@ namespace DomainLib.Repository
 
         IEnumerable<T> IRepository<T>.GetAll()
         {
-            return Context.Set<T>();
+            return Context.Set<T>().AsExpandable();
         }
 
         IEnumerable<T> IRepository<T>.Where(Expression<Func<T, bool>> predicate)
         {
-            return Context.Set<T>().Where(predicate);
+            return Context.Set<T>().AsExpandable().Where(predicate);
         }
 
         bool IRepository<T>.Any(Expression<Func<T, bool>> predicate)
         {
-            return Context.Set<T>().Any(predicate);
+            return Context.Set<T>().AsExpandable().Any(predicate);
         }
 
         T IRepository<T>.FirstOrDefault(Expression<Func<T, bool>> predicate)
@@ -114,7 +116,7 @@ namespace DomainLib.Repository
 
         IQueryable<T> IRepository<T>.Include(string field)
         {
-            return Context.Set<T>().Include(field);
+            return Context.Set<T>().AsExpandable().Include(field);
         }
 
         IQueryable<T> IRepository<T>.Take(int count)
