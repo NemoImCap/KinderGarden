@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Web.Http;
 
 namespace Web.Areas.Api.Controllers
@@ -16,16 +17,42 @@ namespace Web.Areas.Api.Controllers
             _kindergardenService = kindergardenService;
         }
 
-        [HttpGet]
-        public IHttpActionResult CreateKindergarden([FromUri] string id)
+        [HttpPost]
+        public IHttpActionResult CreateGarten([FromBody] Kindergarden kindergarden)
         {
-            return Json("Hello");
+            if (string.IsNullOrEmpty(kindergarden.Address) || kindergarden.Number == 0)
+            {
+                return BadRequest("Address and number is requeried");
+            }
+            var entity = new Kindergarden { Address = kindergarden.Address, Number = kindergarden.Number };
+            _kindergardenService.AddKindergarden(entity);
+            return Ok(entity);
         }
+
         [HttpGet]
         public IHttpActionResult GetKindergardens([FromUri] string search = "", int number = 0, int page = 1)
         {
             var items = _kindergardenService.GetKindergardens(search, number, page);
             return Json(items);
+        }
+
+        [HttpPost]
+        public IHttpActionResult DeleteKindergaten([FromBody] int id)
+        {
+            var item = _kindergardenService.GetKindergardenById(id);
+            if (item == null) return BadRequest("Kindergarten not found");
+            _kindergardenService.DeleteKindergarden(item);
+            return Ok("Kindergarten was deleted successfully");
+        }
+        [HttpPost]
+        public IHttpActionResult UpdateKindergarten([FromBody] Kindergarden kindergarden)
+        {
+            var entity = _kindergardenService.GetKindergardenById(kindergarden.Id);
+            if (entity == null) return BadRequest("Kindergarten not found");
+            entity.Address = kindergarden.Address;
+            entity.Number = kindergarden.Number;
+            _kindergardenService.UpdateKindergarden(entity);
+            return Ok(kindergarden);
         }
     }
 }

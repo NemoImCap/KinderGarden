@@ -4,9 +4,11 @@
 //Controllers
 app.controller('AppController', AppController);
 app.controller('KindergartenController', KindergartenController);
+app.controller('ModalController', ModalController);
 
 AppController.$inject = ['$scope'];
-KindergartenController.$inject = ['$scope', 'kindergartenService'];
+KindergartenController.$inject = ['$scope', '$uibModal', 'kindergartenService'];
+ModalController.$inject = ['$scope', '$uibModalInstance','kindergartenService', 'item'];
 
 /* Core Module Config
 -----------------------------------------------------------------------------------------------------------------*/

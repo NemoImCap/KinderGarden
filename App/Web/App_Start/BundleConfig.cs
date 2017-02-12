@@ -17,7 +17,7 @@ namespace Web.App_Start
 
 
             //Angular init 
-            bundles.Add(new ScriptBundle("~/Angular/").Include(ANGULAR_VENDORS_ROOT + "angular/angular.min.js").IncludeDirectory(ANGULAR_VENDORS_ROOT, "*.js", searchSubdirectories: true));
+            bundles.Add(new ScriptBundle("~/Angular/").Include(ANGULAR_VENDORS_ROOT + "angular/angular.min.js").Include(ANGULAR_VENDORS_ROOT + "angular-ui-bs/ui-bootstrap-2.5.0.min.js").IncludeDirectory(ANGULAR_VENDORS_ROOT, "*.js", searchSubdirectories: true));
             bundles.Add(new ScriptBundle("~/AngularApp/").IncludeDirectory(ANGULAR_MAIN, "*.js", searchSubdirectories: true));
             bundles.Add(new ScriptBundle("~/AngularScript/")
                 .IncludeDirectory(ANGULAR_APP_ROOT + "common/", "*.js", searchSubdirectories: true)

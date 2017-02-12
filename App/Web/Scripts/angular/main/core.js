@@ -18,8 +18,11 @@
             var url = currentUrl.indexOf("localhost") > -1 ? "http://localhost:57084/" : "";
             return url;
         },
-        "GetKindergartens": "/api/Kindergarden/GetKinderGardens/?",
-        "GetKindergartensNumbers": '/api/Kindergarden/GetKindergartensNumbers'
+        "GetKindergartens": "api/Kindergarden/GetKinderGardens/?",
+        "GetKindergartensNumbers": 'api/Kindergarden/GetKindergartensNumbers',
+        "CreateKindergarten": 'api/Kindergarden/CreateGarten',
+        "DeleteKindergarten": 'api/Kindergarden/DeleteKindergaten',
+        "UpdateKindergarten": 'api/Kindergarden/UpdateKindergarten',
     });
 
 //Services

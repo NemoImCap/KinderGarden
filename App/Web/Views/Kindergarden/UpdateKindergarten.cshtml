@@ -1,0 +1,16 @@
+﻿<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Update Kindergarten!</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <form>
+        <label for="address">Kindergarten Address</label>
+        <input name="address" class="form-control" placeholder="Address" ng-model="Context.Address" type="text" />
+        <label for="number">Kindergarten Number</label>
+        <input name="number" class="form-control" placeholder="Number" ng-model="Context.Number" type="number" />
+
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-success" type="button" ng-click="UpdateKindergarten()">Update</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

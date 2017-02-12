@@ -1,4 +1,11 @@
-﻿div#ngHelperBusyLayer {
+﻿body {
+    background: #fff url(/Content/backgrounds/bg-body.png) repeat center top;
+    width: 100%;
+    position: absolute;
+    min-height: 100%;
+    width: 100%;
+}
+div#ngHelperBusyLayer {
     display: none;
     background-color:       white;
     filter:                 alpha(opacity=50);      /* IE */
@@ -107,4 +114,6 @@ body.ngHelperBusyLayerNoScroll {
 }
 .page-content {
     padding-top: 50px;
+    background-color: #eee;
 }
+

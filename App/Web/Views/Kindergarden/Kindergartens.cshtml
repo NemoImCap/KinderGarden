@@ -6,7 +6,7 @@
 <div class="" ng-controller="KindergartenController">
     <h4>Kindergartens Page</h4>
     <div class="form-group">
-        <button class="btn btn-sm btn-success">Add Kindergarten</button>
+        <button class="btn btn-sm btn-success" ng-click="CreateDialog()">Add Kindergarten</button>
     </div>
     <div id="filter-panel" class="filter-panel">
         <div class="panel panel-default">
@@ -17,7 +17,7 @@
                         <input type="number" class="form-control" min="0" ng-model="gridModel.number" placeholder="Enter Adress">
                     </div>
                     <div class="form-group">
-                        <label>Adress:</label>
+                        <label>Address:</label>
                         <input type="text" class="form-control" ng-model="gridModel.search" placeholder="Enter Adress">
                     </div>
                     <button class="btn btn-success btn-sm" ng-click="LoadData()">Search</button>
@@ -48,7 +48,7 @@
                 </td>
                 <td>
                     <div class="btn-group">
-                        <button class="btn btn-sm btn-warning">Update</button><button class="btn btn-sm btn-danger">Delete</button>
+                        <button class="btn btn-sm btn-warning" ng-click="UpdateDialog(garten)">Update</button><button class="btn btn-sm btn-danger" ng-click="DeleteKindergarten(garten, $index)">Delete</button>
                     </div>
                 </td>
             </tr>

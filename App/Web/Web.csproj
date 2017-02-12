@@ -140,14 +140,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-tpls-0.12.0.min.js" />
-    <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-tpls-0.14.3.js" />
+    <Content Include="Assets\framework\angular-ui-bs\ui-bootstrap-2.5.0.min.js" />
     <Content Include="Assets\framework\angular\angular-local-storage.js" />
     <Content Include="Assets\framework\angular\angular-mocks.js" />
     <Content Include="Assets\framework\angular\angular.min.js" />
     <Content Include="Assets\framework\ngHelperBusy\ngHelperBusy.js" />
     <Content Include="Assets\framework\smart-table\smart-table.js" />
     <Content Include="Content\animate.min.css" />
+    <Content Include="Content\backgrounds\bg-body.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -171,6 +171,7 @@
     <Content Include="Scripts\angular\common\services\spinnerService.js" />
     <Content Include="Scripts\angular\controllers\AppController.js" />
     <Content Include="Scripts\angular\controllers\KindergartenController.js" />
+    <Content Include="Scripts\angular\controllers\ModalController.js" />
     <Content Include="Scripts\angular\main\config.js" />
     <Content Include="Scripts\angular\main\core.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -211,6 +212,7 @@
     <Content Include="Views\Shared\_SidebarNavigation.cshtml" />
     <Content Include="Views\Kindergarden\CreateKindergarden.cshtml" />
     <Content Include="Views\Kindergarden\Kindergartens.cshtml" />
+    <Content Include="Views\Kindergarden\UpdateKindergarten.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

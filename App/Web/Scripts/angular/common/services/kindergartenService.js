@@ -7,20 +7,24 @@
             number: model.number || 0,
             page: model.page || 1
         });
-        return spinnerService.during(api.get(appSettings.GetKindergartens, param));
+        var promise = spinnerService.during(api.get(appSettings.GetKindergartens, param));
+        return promise;
     }
 
 
-    self.AddOrder = function (model) {
-        var params = $.param({
-            address: model.address,
-            number: model.number,
-        });
+    self.CreateKindergarten = function (model) {
+        var promise = spinnerService.during(api.post(appSettings.CreateKindergarten, model));
+        return promise;
+    }
 
-        var config = {
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
-        };
-        return spinnerService.during(api.post(appSettings, params, config));
+    self.DeleteKindergarten = function(model) {
+        var promise = spinnerService.during(api.post(appSettings.DeleteKindergarten, model.Id));
+        return promise;
+    }
+
+    self.UpdateKindergarten = function (model) {
+        var promise = spinnerService.during(api.post(appSettings.UpdateKindergarten, model));
+        return promise;
     }
 
     return self;

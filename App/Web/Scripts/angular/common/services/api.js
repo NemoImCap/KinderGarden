@@ -4,17 +4,15 @@
     api.get = function (url, params) {
         var deferred = $q.defer();
         var apiUrl = appSettings.serviceUrl($window.location.href) + url + params;
-        $http({
-            method: 'GET',
-            url: apiUrl,
-        }).
-            success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            }).
-            error(function (data, status) {
-
-                deferred.reject(data);
-            });
+            $http({
+                method: 'GET',
+                url: apiUrl,
+            }).then(function (response) {
+                deferred.resolve(response);
+                },
+                function(response) {
+                    deferred.reject(response);
+                });
         return deferred.promise;
     },
 
@@ -25,17 +23,20 @@
         var options = {
             method: 'POST',
             url: apiUrl,
-            data: params
-            //data: JSON.stringify(params),
+            //data: params
+            data: JSON.stringify(params),
+            headers: {
+                'Content-Type': 'application/json'
+            }
         }
         var opt = angular.extend(options, userConfig);
-        $http(opt).
-            success(function (data, status, headers, config) {
-                deferred.resolve(data);
-            }).
-            error(function (data, status) {
-                deferred.reject(data);
-            });
+        $http(opt)
+           .then(function (response) {
+               deferred.resolve(response);
+           },
+                function(response) {
+                    deferred.reject(response);
+                });
         return deferred.promise;
     }
     return api;
