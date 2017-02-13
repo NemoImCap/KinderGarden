@@ -18,11 +18,17 @@
             var url = currentUrl.indexOf("localhost") > -1 ? "http://localhost:57084/" : "";
             return url;
         },
+        //Kindergarten
         "GetKindergartens": "api/Kindergarden/GetKinderGardens/?",
         "GetKindergartensNumbers": 'api/Kindergarden/GetKindergartensNumbers',
         "CreateKindergarten": 'api/Kindergarden/CreateGarten',
         "DeleteKindergarten": 'api/Kindergarden/DeleteKindergaten',
         "UpdateKindergarten": 'api/Kindergarden/UpdateKindergarten',
+        //Children
+        "CreateChild": 'api/Children/CreateChild',
+        "GetChildren": 'api/Children/GetChildren/?',
+        "UpdateChild": 'api/Children/UpdateChild/',
+        "DeleteChild": 'api/Children/DeleteChild/'
     });
 
 //Services
@@ -30,7 +36,9 @@
 core.service('api', Api);
 core.service('spinnerService', spinnerService);
 core.service('kindergartenService', kindergartenService);
+core.service('childrenService', childrenService);
 
 spinnerService.$inject = ['$timeout', '$busy'];
-kindergartenService.$inject = ["api", "appSettings", "spinnerService"];
 Api.$inject = ['$http', '$q', 'appSettings', '$window'];
+childrenService.$inject = ["api", "appSettings", "spinnerService"];
+kindergartenService.$inject = ["api", "appSettings", "spinnerService"];

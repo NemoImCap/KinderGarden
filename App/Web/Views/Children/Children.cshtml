@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "~/Views/Shared/_SidebarNavigation.cshtml";
+    ViewBag.Title = "Kindergartens";
+
+}
+<div class="" ng-controller="ChildrenController">
+    <h4>Children Page</h4>
+    <div class="form-group">
+        <button class="btn btn-sm btn-success" ng-click="CreateDialog()">Add Child</button>
+    </div>
+    <div id="filter-panel" class="filter-panel">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <label>Child Age</label>
+                        <input type="number" class="form-control input-sm" min="0" ng-model="gridModel.number" placeholder="Enter Age">
+                    </div>
+                    <div class="form-group">
+                        <label>First/Last Name</label>
+                        <input type="text" class="form-control input-sm" ng-model="gridModel.search" placeholder="Enter First or Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label>Kindergarten</label>
+                        <input type="number" class="form-control input-sm" min="0" ng-model="gridModel.gartenNumber" placeholder="Enter Number">
+                    </div>
+                    <button class="btn btn-info btn-sm" ng-click="LoadData()">Search</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <table st-table="Kindergartens" class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th nowrap="">FirstName</th>
+                <th nowrap="">LastName</th>
+                <th nowrap="">MiddleName</th>
+                <th nowrap="">Age</th>
+                <th>Kindergarten Address</th>
+                <th>Kindergarten Number</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="child in Children" class="animated fadeIn">
+                <td>
+                    <strong>{{child.FirstName}}</strong>
+                </td>
+                <td>
+                    {{child.LastName}}
+                </td>
+                <td>
+                    {{child.MiddleName}}
+                </td>
+                <td>
+                    {{child.Age}}
+                </td>
+                <td>
+                    {{child.Kindergarden.Address ? child.Kindergarden.Address : 'Not considered'}}
+                </td>
+                <td>
+                    {{child.Kindergarden.Number ? child.Kindergarden.Number : 'Not considered'}}
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn btn-xs btn-warning" ng-click="UpdateDialog(child)">Update</button><button class="btn btn-xs btn-danger" ng-click="DeleteChild(child, $index)">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="text-center" colspan="12">
+                    <ul uib-pagination total-items="50" max-size="2" ng-model="gridModel.page" ng-change="LoadData()" direction-links="false"></ul>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+
+

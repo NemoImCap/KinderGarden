@@ -29,7 +29,7 @@ public class Kindergarden
 		set;
 	}
 
-	public virtual IEnumerable<Child> Child
+	public virtual IEnumerable<Child> Childen
 	{
 		get;
 		set;

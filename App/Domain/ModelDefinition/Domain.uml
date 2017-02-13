@@ -596,7 +596,7 @@
             Id="42330997-c895-4f86-8627-58a10e68ccf6"
             isDerived="false"
             sourceEndRoleName="Kindergarden"
-            targetEndRoleName="Child"
+            targetEndRoleName="Childen"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -614,13 +614,12 @@
                   isDerived="false"
                   isDerivedUnion="false"
                   aggregation="None"
-                  isComposite="false"
-                  isNavigableOwned="false" />
+                  isComposite="false" />
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8737dd01-7adb-4f7f-831d-444f66924a15"
-                  name="Child"
+                  name="Childen"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"
@@ -1704,6 +1703,34 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="a1aa2736-899a-4476-a23e-b3fe8af5d758"
+                  name="gartenId"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="76f0c671-1bfe-4df3-b436-cf6914af159c"
+                      LastKnownName="int?"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7f27a03f-c8f4-4be7-8820-cf88d0d9c052"
+                  name="age"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="76f0c671-1bfe-4df3-b436-cf6914af159c"
+                      LastKnownName="int?"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6"
                   name="search"
                   direction="In"
                   isUnique="false">
@@ -1715,33 +1742,14 @@
                   </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="e0468c55-3b70-440c-b3cc-2f84534d7f87"
+                      Id="779bc762-727f-471a-8c3f-14f354363057"
                       value="&quot;&quot;" />
                   </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="7f27a03f-c8f4-4be7-8820-cf88d0d9c052"
-                  name="age"
-                  direction="In"
-                  isUnique="false">
-                  <type_NamedElement>
-                    <undefinedTypeMoniker
-                      Id="49625410-de3d-49e7-9bea-b98e40915dc8"
-                      LastKnownName="int"
-                      LastKnownLocation="Domain.uml" />
-                  </type_NamedElement>
-                  <defaultValue>
-                    <literalString
-                      Id="376691ed-39d4-4e95-b4c0-91dcd1fe840b"
-                      value="0" />
-                  </defaultValue>
-                </parameter>
-              </operationHasOwnedParameters>
-              <operationHasOwnedParameters>
-                <parameter
-                  Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6"
+                  Id="b32b4d02-b83e-4705-a14f-68691a011582"
                   name="page"
                   direction="In"
                   isUnique="false">
@@ -1753,7 +1761,7 @@
                   </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="782e88f3-2783-4ad1-a721-773ce20bc377"
+                      Id="397d56dc-6acf-4643-a6d7-1866616d12ba"
                       value="1" />
                   </defaultValue>
                 </parameter>
@@ -1873,6 +1881,11 @@
       <undefinedType
         Id="49625410-de3d-49e7-9bea-b98e40915dc8"
         name="int" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="76f0c671-1bfe-4df3-b436-cf6914af159c"
+        name="int?" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

@@ -41,5 +41,11 @@ public class Child
 		set;
 	}
 
+	public virtual Kindergarden Kindergarden
+	{
+		get;
+		set;
+	}
+
 }
 

@@ -4,11 +4,13 @@
 <div class="modal-body" id="modal-body">
     <form>
         <label for="address">Kindergarten Address</label>
-        <input name="address" class="form-control" placeholder="Address" ng-model="KindergartenModel.address" type="text" />
+        <input name="address" class="form-control" placeholder="Address" required="" ng-model="KindergartenModel.address" type="text" />
         <label for="number">Kindergarten Number</label>
-        <input name="number" class="form-control" placeholder="Number" ng-model="KindergartenModel.number" type="number" />
-
+        <input name="number" class="form-control" placeholder="Number" required="" ng-model="KindergartenModel.number" type="number" />
     </form>
+</div>
+<div class="alert alert-warning animated fadeInDown" ng-show="modalError">
+    <strong>Warning </strong> Address and number required
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" type="button" ng-click="CreateKindergarten()">OK</button>

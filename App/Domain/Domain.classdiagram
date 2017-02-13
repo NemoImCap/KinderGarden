@@ -433,16 +433,16 @@
         </appliedStereotypesInternal>
         <elementDefinition Id="b80870f8-7a97-4041-87bc-190b55a9cab7" />
         <targetEnds>
-          <association Id="0c879fb5-e175-4b70-85a6-b34a5f1de3bc" isDerived="false" sourceEndRoleName="Kindergarden" targetEndRoleName="Child" isLeaf="false" isAbstract="false">
+          <association Id="0c879fb5-e175-4b70-85a6-b34a5f1de3bc" isDerived="false" sourceEndRoleName="Kindergarden" targetEndRoleName="Childen" isLeaf="false" isAbstract="false">
             <classMoniker Id="426ba906-6fd3-48bb-b23b-7b5e141d0116" LastKnownName="Child" />
             <relationshipOwnedElementsInternal>
               <associationHasOwnedEnds>
-                <memberEnd Id="0939320d-1130-48ba-ae7e-c10489656f69" name="Kindergarden" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false" isNavigableOwned="false">
+                <memberEnd Id="0939320d-1130-48ba-ae7e-c10489656f69" name="Kindergarden" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <elementDefinition Id="2f351c22-8069-4d6e-bc48-a31e76ed0ae1" />
                 </memberEnd>
               </associationHasOwnedEnds>
               <associationHasOwnedEnds>
-                <memberEnd Id="95a35e8a-0b04-4d23-a0cd-18f55d0fd6be" name="Child" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                <memberEnd Id="95a35e8a-0b04-4d23-a0cd-18f55d0fd6be" name="Childen" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
                   <lowerValueInternal>
                     <literalString Id="c1ebf009-05a4-4847-88ef-a2141b60a756" name="Lower" value="*">
                       <elementDefinition Id="21cb8218-23db-4cac-bdb3-ac7cd49e5a06" />
@@ -1297,40 +1297,43 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="387de09d-095d-4384-8c1b-7c44629d2f3a" name="search" direction="In" isUnique="false">
+                <parameter Id="387de09d-095d-4384-8c1b-7c44629d2f3a" name="gartenId" direction="In" isUnique="false">
                   <elementDefinition Id="a1aa2736-899a-4476-a23e-b3fe8af5d758" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="163ce876-3c6f-4a66-ab13-8e508fb19c20" LastKnownName="string" />
+                    <referencedTypeMoniker Id="e21f0365-432b-4f20-a551-af4d2744d3ae" LastKnownName="int?" />
                   </type_NamedElement>
-                  <defaultValue>
-                    <literalString Id="16d0ef2d-2b7b-436b-9bd6-9f03f0fd8061" value="&quot;&quot;">
-                      <elementDefinition Id="e0468c55-3b70-440c-b3cc-2f84534d7f87" />
-                    </literalString>
-                  </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter Id="a7ac4b61-c20f-4ab5-83b0-da47bd1c852b" name="age" direction="In" isUnique="false">
                   <elementDefinition Id="7f27a03f-c8f4-4be7-8820-cf88d0d9c052" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="72df1877-ec52-4136-89e0-ff652aaf9e6e" LastKnownName="int" />
+                    <referencedTypeMoniker Id="e21f0365-432b-4f20-a551-af4d2744d3ae" LastKnownName="int?" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f44a8c10-cfc1-46d0-a2f6-0511440af504" name="search" direction="In" isUnique="false">
+                  <elementDefinition Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="163ce876-3c6f-4a66-ab13-8e508fb19c20" LastKnownName="string" />
                   </type_NamedElement>
                   <defaultValue>
-                    <literalString Id="1ff88001-813d-4f60-abf5-666afa5db176" value="0">
-                      <elementDefinition Id="376691ed-39d4-4e95-b4c0-91dcd1fe840b" />
+                    <literalString Id="4cfcae8a-d5b5-455a-a50c-1a2b8c5e1877" value="&quot;&quot;">
+                      <elementDefinition Id="779bc762-727f-471a-8c3f-14f354363057" />
                     </literalString>
                   </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="f44a8c10-cfc1-46d0-a2f6-0511440af504" name="page" direction="In" isUnique="false">
-                  <elementDefinition Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6" />
+                <parameter Id="e992284a-c388-43ae-bd4c-0187ba7d2960" name="page" direction="In" isUnique="false">
+                  <elementDefinition Id="b32b4d02-b83e-4705-a14f-68691a011582" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="72df1877-ec52-4136-89e0-ff652aaf9e6e" LastKnownName="int" />
                   </type_NamedElement>
                   <defaultValue>
-                    <literalString Id="79f55915-e5f9-497d-a05b-2abcc9ab9659" value="1">
-                      <elementDefinition Id="782e88f3-2783-4ad1-a721-773ce20bc377" />
+                    <literalString Id="b711ae68-3dfa-47d4-8139-8110bb665a8f" value="1">
+                      <elementDefinition Id="397d56dc-6acf-4643-a6d7-1866616d12ba" />
                     </literalString>
                   </defaultValue>
                 </parameter>
@@ -1437,6 +1440,11 @@
     <packageHasNamedElement>
       <referencedType Id="72df1877-ec52-4136-89e0-ff652aaf9e6e" name="int" isAbstract="false" isLeaf="false" cachedFullName="int">
         <elementDefinition Id="49625410-de3d-49e7-9bea-b98e40915dc8" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="e21f0365-432b-4f20-a551-af4d2744d3ae" name="int?" isAbstract="false" isLeaf="false" cachedFullName="int?">
+        <elementDefinition Id="76f0c671-1bfe-4df3-b436-cf6914af159c" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>

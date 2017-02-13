@@ -13,14 +13,14 @@
             <div class="panel-body">
                 <form class="form-inline" role="form">
                     <div class="form-group">
-                        <label >Kindergarten's number:</label>
+                        <label >Kindergarten's number</label>
                         <input type="number" class="form-control" min="0" ng-model="gridModel.number" placeholder="Enter Adress">
                     </div>
                     <div class="form-group">
-                        <label>Address:</label>
+                        <label>Address</label>
                         <input type="text" class="form-control" ng-model="gridModel.search" placeholder="Enter Adress">
                     </div>
-                    <button class="btn btn-success btn-sm" ng-click="LoadData()">Search</button>
+                    <button class="btn btn-info btn-sm" ng-click="LoadData()">Search</button>
                 </form>
             </div>
         </div>
@@ -44,11 +44,11 @@
                     {{garten.Number}}
                 </td>
                 <td>
-                    <a class="btn btn-info btn-sm" href=""> Children</a>
+                    <a class="btn btn-info btn-xs" href=""> Children</a>
                 </td>
                 <td>
                     <div class="btn-group">
-                        <button class="btn btn-sm btn-warning" ng-click="UpdateDialog(garten)">Update</button><button class="btn btn-sm btn-danger" ng-click="DeleteKindergarten(garten, $index)">Delete</button>
+                        <button class="btn btn-xs btn-warning" ng-click="UpdateDialog(garten)">Update</button><button class="btn btn-xs btn-danger" ng-click="DeleteKindergarten(garten, $index)">Delete</button>
                     </div>
                 </td>
             </tr>
