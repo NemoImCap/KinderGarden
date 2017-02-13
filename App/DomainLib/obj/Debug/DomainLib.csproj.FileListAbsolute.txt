@@ -30,9 +30,9 @@ E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.Razor.resources.dll
 E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.WebPages.resources.dll
 E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
 E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.InitDb.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.UpdateEntitiesLinks.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csproj.GenerateResource.Cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.dll
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.pdb
-E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
