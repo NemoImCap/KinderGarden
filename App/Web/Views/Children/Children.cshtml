@@ -69,7 +69,7 @@
                 </td>
             </tr>
         </tbody>
-        <tfoot ng-show="Children.length">
+        <tfoot ng-show="!Children.length">
             <tr>
                 <td class="text-center" colspan="12">
                     <ul uib-pagination total-items="50" max-size="2" ng-model="gridModel.page" ng-change="LoadData()" direction-links="false"></ul>
