@@ -8,7 +8,7 @@
     $scope.item = null;
     $scope.gridModel = {
         search: "",
-        number: 0,
+        number: null,
         page: 0
     }
 

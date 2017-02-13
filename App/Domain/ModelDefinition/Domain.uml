@@ -1717,7 +1717,7 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="7f27a03f-c8f4-4be7-8820-cf88d0d9c052"
-                  name="age"
+                  name="gartenNumber"
                   direction="In"
                   isUnique="false">
                   <type_NamedElement>
@@ -1731,6 +1731,20 @@
               <operationHasOwnedParameters>
                 <parameter
                   Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6"
+                  name="age"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="76f0c671-1bfe-4df3-b436-cf6914af159c"
+                      LastKnownName="int?"
+                      LastKnownLocation="Domain.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b32b4d02-b83e-4705-a14f-68691a011582"
                   name="search"
                   direction="In"
                   isUnique="false">
@@ -1742,14 +1756,14 @@
                   </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="779bc762-727f-471a-8c3f-14f354363057"
+                      Id="f76e7b96-2dfe-4ae0-9ee1-71f4a2416cc0"
                       value="&quot;&quot;" />
                   </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
                 <parameter
-                  Id="b32b4d02-b83e-4705-a14f-68691a011582"
+                  Id="a7ab8cca-0ac9-4496-87ec-09cd75310e81"
                   name="page"
                   direction="In"
                   isUnique="false">
@@ -1761,7 +1775,7 @@
                   </type_NamedElement>
                   <defaultValue>
                     <literalString
-                      Id="397d56dc-6acf-4643-a6d7-1866616d12ba"
+                      Id="a2196865-6777-4a9c-aec1-c469adc3dce4"
                       value="1" />
                   </defaultValue>
                 </parameter>

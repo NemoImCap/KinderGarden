@@ -34,7 +34,7 @@ namespace DomainLib.Services
            _childRepository.Remove(child);
         }
 
-        public IEnumerable<Child> GetChildren(int? gartenId, int? age, string search = "", int page = 1)
+        public IEnumerable<Child> GetChildren(int? gartenId, int? gartenNumber, int? age, string search = "", int page = 1)
         {
             IQueryable<Child> queryable = _childRepository.GetAll().AsQueryable();
             Expression<Func<Child, bool>> selector = PredicateBuilder.True<Child>();
@@ -46,9 +46,13 @@ namespace DomainLib.Services
             {
                 selector = selector.And(x => x.Age == age);
             }
+            if (gartenNumber > 0)
+            {
+                selector = selector.And(x => x.Kindergarden.Number == gartenNumber);
+            }
             if (gartenId > 0)
             {
-                selector = selector.And(x => x.Kindergarden.Number == gartenId);
+                selector = selector.And(x => x.Kindergarden.Id == gartenId);
             }
             var items = queryable.Where(selector).ToList();
             var list = items.Skip((page - 1)*PageSize).Take(PageSize);

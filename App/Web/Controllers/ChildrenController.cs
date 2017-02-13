@@ -9,7 +9,7 @@ namespace Web.Controllers
     public class ChildrenController : Controller
     {
         // GET: Children
-        public ActionResult Children(int? id)
+        public ActionResult Children()
         {
             return View();
         }
@@ -22,6 +22,11 @@ namespace Web.Controllers
         public ActionResult UpdateChild()
         {
             return PartialView();
+        }
+
+        public ActionResult GetChildren(int gartenId)
+        {
+            return View();
         }
     }
 }

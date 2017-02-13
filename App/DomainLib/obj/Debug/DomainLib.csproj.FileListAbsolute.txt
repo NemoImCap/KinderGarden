@@ -35,3 +35,4 @@ E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.UpdateEntitiesLinks.resou
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csproj.GenerateResource.Cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.dll
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.pdb
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache

@@ -75,7 +75,7 @@
         if (!$scope.modalError) {
             var request = childrenService.UpdateChild($scope.Context);
             request.then(function(response) {
-                $uibModalInstance.close();
+                $uibModalInstance.close(response.data);
             });
         }
     }

@@ -11,10 +11,14 @@
         search: "",
         age: 0,
         page: 0,
-        gartenNumber: 0
+        gartenNumber: null
     }
 
     $scope.InitPageContent = function () {
+        var search = RegExp('[?&]' + "gartenId" + '=([^&]*)').exec(window.location.search);
+        if (search) {
+            $scope.gridModel.gartenId = Number(search[1]);
+        }
         $scope.LoadData();
     }
 
@@ -55,7 +59,7 @@
         });
     };
 
-    $scope.UpdateDialog = function (child) {
+    $scope.UpdateDialog = function (child, index) {
         var modalInstance = $uibModal.open({
             animation: true,
             ariaLabelledBy: 'modal-title',
@@ -72,7 +76,12 @@
         });
 
         modalInstance.result.then(function (item) {
-
+            if (window.location.pathname == "/Children/GetChildren/") {
+                $scope.Children.splice(index, 1);
+            } else {
+                $scope.Children[index] = item;
+            }
+           
         });
     }
 

@@ -71,10 +71,10 @@ namespace Web.Areas.Api.Controllers
             return Ok(entity);
         }
 
-
-        public IHttpActionResult GetChildren([FromUri] int? gartenNumber, string search = "", int age = 0, int page = 1)
+        [HttpGet]
+        public IHttpActionResult GetChildren([FromUri] int? gartenId, int? gartenNumber, string search = "", int age = 0, int page = 1)
         {
-            var result = _childService.GetChildren(gartenNumber, age, search, page);
+            var result = _childService.GetChildren(gartenId,gartenNumber, age, search, page);
             return Ok(result);
         }
     }

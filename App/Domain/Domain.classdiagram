@@ -1305,7 +1305,7 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="a7ac4b61-c20f-4ab5-83b0-da47bd1c852b" name="age" direction="In" isUnique="false">
+                <parameter Id="a7ac4b61-c20f-4ab5-83b0-da47bd1c852b" name="gartenNumber" direction="In" isUnique="false">
                   <elementDefinition Id="7f27a03f-c8f4-4be7-8820-cf88d0d9c052" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="e21f0365-432b-4f20-a551-af4d2744d3ae" LastKnownName="int?" />
@@ -1313,27 +1313,35 @@
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="f44a8c10-cfc1-46d0-a2f6-0511440af504" name="search" direction="In" isUnique="false">
+                <parameter Id="f44a8c10-cfc1-46d0-a2f6-0511440af504" name="age" direction="In" isUnique="false">
                   <elementDefinition Id="3b764998-0cb9-4252-9d8d-098eaf38f3e6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="e21f0365-432b-4f20-a551-af4d2744d3ae" LastKnownName="int?" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e992284a-c388-43ae-bd4c-0187ba7d2960" name="search" direction="In" isUnique="false">
+                  <elementDefinition Id="b32b4d02-b83e-4705-a14f-68691a011582" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="163ce876-3c6f-4a66-ab13-8e508fb19c20" LastKnownName="string" />
                   </type_NamedElement>
                   <defaultValue>
-                    <literalString Id="4cfcae8a-d5b5-455a-a50c-1a2b8c5e1877" value="&quot;&quot;">
-                      <elementDefinition Id="779bc762-727f-471a-8c3f-14f354363057" />
+                    <literalString Id="2cbfe576-3db4-409c-b72e-17e3bdc5a4e9" value="&quot;&quot;">
+                      <elementDefinition Id="f76e7b96-2dfe-4ae0-9ee1-71f4a2416cc0" />
                     </literalString>
                   </defaultValue>
                 </parameter>
               </operationHasOwnedParameters>
               <operationHasOwnedParameters>
-                <parameter Id="e992284a-c388-43ae-bd4c-0187ba7d2960" name="page" direction="In" isUnique="false">
-                  <elementDefinition Id="b32b4d02-b83e-4705-a14f-68691a011582" />
+                <parameter Id="b5d4c856-5010-4c5b-8dfc-e088aea65ce8" name="page" direction="In" isUnique="false">
+                  <elementDefinition Id="a7ab8cca-0ac9-4496-87ec-09cd75310e81" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="72df1877-ec52-4136-89e0-ff652aaf9e6e" LastKnownName="int" />
                   </type_NamedElement>
                   <defaultValue>
-                    <literalString Id="b711ae68-3dfa-47d4-8139-8110bb665a8f" value="1">
-                      <elementDefinition Id="397d56dc-6acf-4643-a6d7-1866616d12ba" />
+                    <literalString Id="050f94f8-1613-4835-b7c2-f762d96f8e7b" value="1">
+                      <elementDefinition Id="a2196865-6777-4a9c-aec1-c469adc3dce4" />
                     </literalString>
                   </defaultValue>
                 </parameter>

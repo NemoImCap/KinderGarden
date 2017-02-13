@@ -3,6 +3,7 @@
 
     self.GetChildren = function (model) {
         var param = $.param({
+            gartenId: model.gartenId || 0,
             search: model.search || "",
             age: model.number || 0,
             page: model.page || 1,

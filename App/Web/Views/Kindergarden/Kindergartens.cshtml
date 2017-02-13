@@ -41,10 +41,10 @@
                     <strong>{{garten.Address}}</strong>
                 </td>
                 <td>
-                    {{garten.Number}}
+                   №{{garten.Number}}
                 </td>
                 <td>
-                    <a class="btn btn-info btn-xs" href=""> Children</a>
+                    <a class="btn btn-info btn-xs" href="@Url.Action("GetChildren","Children")/?gartenId={{garten.Id}}"> Children</a>
                 </td>
                 <td>
                     <div class="btn-group">
@@ -53,7 +53,7 @@
                 </td>
             </tr>
         </tbody>
-        <tfoot>
+        <tfoot ng-show="Kindergartens.length">
             <tr>
                 <td class="text-center" colspan="12">
                     <ul uib-pagination total-items="50" max-size="2" ng-model="gridModel.page" ng-change="LoadData()" direction-links="false"></ul>

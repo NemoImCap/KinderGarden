@@ -221,6 +221,7 @@
     <Content Include="Views\Children\Children.cshtml" />
     <Content Include="Views\Children\CreateChild.cshtml" />
     <Content Include="Views\Children\UpdateChild.cshtml" />
+    <Content Include="Views\Children\GetChildren.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
