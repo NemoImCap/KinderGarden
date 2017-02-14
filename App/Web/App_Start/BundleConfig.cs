@@ -35,6 +35,7 @@ namespace Web.App_Start
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

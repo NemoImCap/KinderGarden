@@ -44,17 +44,12 @@
         </thead>
         <tbody>
             <tr ng-repeat="child in Children" class="animated fadeIn">
-                <td>
-                    {{child.FirstName}}
+                <td ng-bind="child.FirstName"></td>
+                <td ng-bind="child.LastName">
                 </td>
-                <td>
-                    {{child.LastName}}
+                <td ng-bind="child.MiddleName">
                 </td>
-                <td>
-                    {{child.MiddleName}}
-                </td>
-                <td>
-                    {{child.Age}}
+                <td ng-bind="child.Age">
                 </td>
                 <td>
                     {{child.Kindergarden.Address ? child.Kindergarden.Address : 'Not considered'}}
@@ -69,7 +64,7 @@
                 </td>
             </tr>
         </tbody>
-        <tfoot ng-show="!Children.length">
+        <tfoot ng-show="Children.length">
             <tr>
                 <td class="text-center" colspan="12">
                     <ul uib-pagination total-items="50" max-size="2" ng-model="gridModel.page" ng-change="LoadData()" direction-links="false"></ul>

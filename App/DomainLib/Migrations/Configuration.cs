@@ -14,18 +14,32 @@ namespace DomainLib.Migrations
 
         protected override void Seed(DomainLib.Context.EfContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            var garten = new Kindergarden {Address = "Panomarenk Street", Number = 56};
+            context.Kindergardens.Add(garten);
+            context.Children.Add(new Child
+            {
+                Age = 4,
+                FirstName = "Boris",
+                LastName = "Ivanov",
+                MiddleName = "Semenovich",
+                Kindergarden = garten
+            });
+            context.Children.Add(new Child
+            {
+                Age = 4,
+                FirstName = "Alex",
+                LastName = "Ivanov",
+                MiddleName = "Semenovich",
+                Kindergarden = garten
+            });
+            context.Children.Add(new Child
+            {
+                Age = 4,
+                FirstName = "Michael",
+                LastName = "Petrov",
+                MiddleName = "Semenovich",
+                Kindergarden = garten
+            });
         }
     }
 }
