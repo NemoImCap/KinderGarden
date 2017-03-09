@@ -36,7 +36,7 @@ namespace DomainLib.Services
 
         public IEnumerable<Child> GetChildren(int? gartenId, int? gartenNumber, int? age, string search = "", int page = 1)
         {
-            IQueryable<Child> queryable = _childRepository.GetAll().AsQueryable();
+            IQueryable<Child> queryable;
             Expression<Func<Child, bool>> selector = PredicateBuilder.True<Child>();
             if (!string.IsNullOrEmpty(search))
             {
@@ -54,9 +54,9 @@ namespace DomainLib.Services
             {
                 selector = selector.And(x => x.Kindergarden.Id == gartenId);
             }
-            var items = queryable.Where(selector).ToList();
-            var list = items.Skip((page - 1)*PageSize).Take(PageSize);
-            return list;
+            queryable = _childRepository.Include("Kindergarden").Where(selector).AsQueryable().OrderBy(x=>x.Id).Skip((page - 1) * PageSize).Take(PageSize);
+            var items = queryable.ToList();
+            return items;
         }
 
         public Child GetChildById(int id)

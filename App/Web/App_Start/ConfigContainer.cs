@@ -22,7 +22,7 @@ namespace Web.App_Start
             var builder = new ContainerBuilder();
            
 
-            builder.RegisterControllers(typeof(MvcApplication).Assembly);
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
             builder.RegisterType<EfContext>().AsSelf().InstancePerRequest();

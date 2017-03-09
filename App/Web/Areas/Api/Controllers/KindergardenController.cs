@@ -32,7 +32,7 @@ namespace Web.Areas.Api.Controllers
         [HttpGet]
         public IHttpActionResult GetKindergardens([FromUri] string search = "", int number = 0, int page = 1)
         {
-            var items = _kindergardenService.GetKindergardens(search, number, page);
+            var items = _kindergardenService.GetKindergardens(search, number, page).Select(x=> new{ Id = x.Id, Address = x.Address, Number = x.Number});
             return Ok(items);
         }
 

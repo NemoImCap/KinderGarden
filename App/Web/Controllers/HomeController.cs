@@ -18,7 +18,6 @@ namespace Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            //_kindergardenService.AddKindergarden(new Kindergarden{Address = "Panomarenko Street", Number = 25});
             return View();
         }
     }

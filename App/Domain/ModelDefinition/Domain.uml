@@ -538,6 +538,81 @@
                 LastKnownLocation="Domain.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="73ecfe05-c64c-4abc-9139-da28639c0406"
+            name="GartenId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="52b9da8d-2297-4daa-b703-294acf01d55e"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="093429e5-2884-40f5-b032-2651c0bc4be2">
+                    <propertyInstance
+                      Id="76f3471a-8d8d-4a42-a564-bf204c6a5858"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fa13a57b-7289-4d54-b2b8-48caf927ffa3">
+                    <propertyInstance
+                      Id="d4fd53e6-b51e-4afa-a5f7-645355c6b232"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d2dfec3-a106-47f6-b2ee-22a640789ae8">
+                    <propertyInstance
+                      Id="8c6f7a9c-497b-413e-8431-756ff7cf996b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e291780e-e5fb-4974-bd56-1dfcb30b418c">
+                    <propertyInstance
+                      Id="9121a956-3b91-4077-915f-6e60dbe63c3a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5efbf462-d004-477e-bd02-0134571b0904">
+                    <propertyInstance
+                      Id="43645bcf-74d8-405a-8dcc-bd1a998edf8e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7f5cc13-e731-4fb0-b6db-3e219985c7b1">
+                    <propertyInstance
+                      Id="dab34e8a-67e7-486a-8fbc-d7748027a4f6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4aadb909-c458-4091-a8d7-af49b3f2d346">
+                    <propertyInstance
+                      Id="17e368e9-7a31-4d62-861e-70ad47ff57dd"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="76f0c671-1bfe-4df3-b436-cf6914af159c"
+                LastKnownName="int?"
+                LastKnownLocation="Domain.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
       </class>
     </packageHasNamedElement>
@@ -596,7 +671,7 @@
             Id="42330997-c895-4f86-8627-58a10e68ccf6"
             isDerived="false"
             sourceEndRoleName="Kindergarden"
-            targetEndRoleName="Childen"
+            targetEndRoleName="Children"
             isLeaf="false"
             isAbstract="false">
             <classMoniker
@@ -619,7 +694,7 @@
               <associationHasOwnedEnds>
                 <memberEnd
                   Id="8737dd01-7adb-4f7f-831d-444f66924a15"
-                  name="Childen"
+                  name="Children"
                   isLeaf="false"
                   isStatic="false"
                   isReadOnly="false"

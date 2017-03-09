@@ -14,8 +14,7 @@ namespace DomainLib.Repository
         void Update(T entity);
         void Remove(T entity);
         void Remove(IEnumerable<T> entities);
-
-        T AddEntity(T entity);
+        void RemoveRange(IEnumerable<T> entities);
         T Find(T entity);
         IEnumerable<T> GetAll();
         IQueryable<T> Include(string field);

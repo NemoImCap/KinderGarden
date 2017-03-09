@@ -12,13 +12,15 @@ namespace DomainLib.Services
     public class KindergardernService : IKindergardenService
     {
         private readonly IRepository<Kindergarden> _kindernRepository;
+        private readonly IRepository<Child> _childRepository; 
         private const int PageSize = 8;
-        public KindergardernService(IRepository<Kindergarden> kindeRepository)
+        public KindergardernService(IRepository<Kindergarden> kindeRepository, IRepository<Child> childRepository)
         {
             _kindernRepository = kindeRepository;
+            _childRepository = childRepository;
         }
 
-      
+
         public void AddKindergarden(Kindergarden kindergarden)
         {
            _kindernRepository.Add(kindergarden);
@@ -26,6 +28,7 @@ namespace DomainLib.Services
 
         public void DeleteKindergarden(Kindergarden kindergarden)
         {
+            var children = kindergarden.Children;
            _kindernRepository.Remove(kindergarden);
         }
 
@@ -42,7 +45,7 @@ namespace DomainLib.Services
 
         public IEnumerable<Kindergarden> GetKindergardens(string address = "", int number = 0, int page = 1)
         {
-            IQueryable<Kindergarden> queryable = _kindernRepository.GetAll().AsQueryable();
+            IQueryable<Kindergarden> queryable;
             Expression<Func<Kindergarden, bool>> selector = PredicateBuilder.True<Kindergarden>();
             if (!string.IsNullOrEmpty(address))
             {
@@ -53,8 +56,13 @@ namespace DomainLib.Services
                 selector = selector.And(x => x.Number == number);
             }
 
-            var items = queryable.Where(selector).ToList();
-            var list = items.Skip((page - 1)*PageSize).Take(PageSize);
+            queryable =
+                _kindernRepository.Where(selector)
+                    .AsQueryable()
+                    .OrderBy(x => x.Id)
+                    .Skip((page - 1)*PageSize)
+                    .Take(PageSize);
+            var list = queryable.ToList();
             return list;
 
         }

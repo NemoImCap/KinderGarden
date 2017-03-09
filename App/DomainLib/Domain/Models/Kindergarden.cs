@@ -6,34 +6,39 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 
 public class Kindergarden
 {
-	public virtual int Id
-	{
-		get;
-		set;
-	}
 
-	public virtual string Address
-	{
-		get;
-		set;
-	}
+    private ICollection<Child> _children;
 
-	public virtual int Number
-	{
-		get;
-		set;
-	}
 
-	public virtual IEnumerable<Child> Childen
-	{
-		get;
-		set;
-	}
+    public virtual int Id
+    {
+        get;
+        set;
+    }
+
+    public virtual string Address
+    {
+        get;
+        set;
+    }
+
+    public virtual int Number
+    {
+        get;
+        set;
+    }
+
+    public virtual ICollection<Child> Children
+    {
+        get { return _children ?? (_children = new Collection<Child>()); }
+        set { _children = value; }
+    }
 
 }
 

@@ -6,6 +6,7 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -41,6 +42,12 @@ public class Child
 		set;
 	}
 
+	public virtual int? GartenId
+	{
+		get;
+		set;
+	}
+    [ForeignKey("GartenId")]
 	public virtual Kindergarden Kindergarden
 	{
 		get;

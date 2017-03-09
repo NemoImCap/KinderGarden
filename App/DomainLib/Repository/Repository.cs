@@ -51,11 +51,22 @@ namespace DomainLib.Repository
             Context.SaveChanges();
         }
 
+
         void IRepository<T>.Update(T entity)
         {
             Context.Set<T>().Attach(entity);
             Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 
+            Context.SaveChanges();
+        }
+
+        void IRepository<T>.RemoveRange(IEnumerable<T> entities)
+        {
+            Context.Set<T>().RemoveRange(entities);
+            foreach (var entity in entities)
+            {
+                Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            }
             Context.SaveChanges();
         }
 
@@ -79,10 +90,6 @@ namespace DomainLib.Repository
             Context.SaveChanges();
         }
 
-        public T AddEntity(T Entity)
-        {
-            throw new NotImplementedException();
-        }
 
         T IRepository<T>.Find(T entity)
         {

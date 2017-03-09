@@ -66,15 +66,16 @@ namespace Web.Areas.Api.Controllers
             {
                 var garten = _kindergardenService.GetKindergardenById(model.GartenId);
                 entity.Kindergarden = garten;
+                model.Kindergarden = garten;
             }
             _childService.UpdteChild(entity);
-            return Ok(entity);
+            return Ok(model);
         }
 
         [HttpGet]
         public IHttpActionResult GetChildren([FromUri] int? gartenId, int? gartenNumber, string search = "", int age = 0, int page = 1)
         {
-            var result = _childService.GetChildren(gartenId,gartenNumber, age, search, page);
+            var result = _childService.GetChildren(gartenId, gartenNumber, age, search, page);
             return Ok(result);
         }
     }

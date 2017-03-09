@@ -36,6 +36,11 @@ namespace Web.Models
             set;
         }
 
+        public string KindergardenAddress { get; set; }
+        public int? KindergratenNumber { get; set; }
+
+        public Kindergarden Kindergarden { get; set; }
+
         public int GartenId
         {
             get;

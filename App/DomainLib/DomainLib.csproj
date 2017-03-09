@@ -96,6 +96,18 @@
     <Compile Include="Migrations\201702121713322_UpdateEntitiesLinks.Designer.cs">
       <DependentUpon>201702121713322_UpdateEntitiesLinks.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702181015203_CorrectKindergarten1.cs" />
+    <Compile Include="Migrations\201702181015203_CorrectKindergarten1.Designer.cs">
+      <DependentUpon>201702181015203_CorrectKindergarten1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181057104_CascadeDelete.cs" />
+    <Compile Include="Migrations\201702181057104_CascadeDelete.Designer.cs">
+      <DependentUpon>201702181057104_CascadeDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703090726504_ChangeCaskade.cs" />
+    <Compile Include="Migrations\201703090726504_ChangeCaskade.Designer.cs">
+      <DependentUpon>201703090726504_ChangeCaskade.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
@@ -114,6 +126,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702121713322_UpdateEntitiesLinks.resx">
       <DependentUpon>201702121713322_UpdateEntitiesLinks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181015203_CorrectKindergarten1.resx">
+      <DependentUpon>201702181015203_CorrectKindergarten1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181057104_CascadeDelete.resx">
+      <DependentUpon>201702181057104_CascadeDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703090726504_ChangeCaskade.resx">
+      <DependentUpon>201703090726504_ChangeCaskade.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />
