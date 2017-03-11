@@ -20,6 +20,7 @@ public interface IChildService
 	IEnumerable<Child> GetChildren(int? gartenId, int? gartenNumber, int? age, string search = "", int page = 1);
 
 	Child GetChildById(int id);
+    void RemoveKinderGarten(IEnumerable<Child> children);
 
 }
 

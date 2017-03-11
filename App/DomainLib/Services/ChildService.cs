@@ -64,5 +64,15 @@ namespace DomainLib.Services
             var entity = _childRepository.FirstOrDefault(x => x.Id == id);
             return entity;
         }
+
+        public void RemoveKinderGarten(IEnumerable<Child> children)
+        {
+
+            foreach (var child in children)
+            {
+                child.Kindergarden = null;
+                _childRepository.Update(child);
+            }
+        }
     }
 }

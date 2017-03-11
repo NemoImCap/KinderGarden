@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -12,15 +13,13 @@ namespace DomainLib.Services
     public class KindergardernService : IKindergardenService
     {
         private readonly IRepository<Kindergarden> _kindernRepository;
-        private readonly IRepository<Child> _childRepository;
         private readonly IChildService _childService;
          
         private const int PageSize = 8;
-        public KindergardernService(IRepository<Kindergarden> kindeRepository, IChildService childService, IRepository<Child> childRepository)
+        public KindergardernService(IRepository<Kindergarden> kindeRepository, IChildService childService)
         {
             _kindernRepository = kindeRepository;
             _childService = childService;
-            _childRepository = childRepository;
         }
 
 
@@ -32,18 +31,13 @@ namespace DomainLib.Services
         public void DeleteKindergarden(Kindergarden kindergarden)
         {
             var item = this.GetKindergardenById(kindergarden.Id);
-            var items = _childService.GetChildren(item.Id, 0,0,"");
-            foreach(var child in items)
-            {
-                child.Kindergarden = null;
-                _childRepository.Update(child);
-            }
+           _childService.RemoveKinderGarten(item.Children.ToArray());
            _kindernRepository.Remove(item);
         }
 
         public Kindergarden GetKindergardenById(int id)
         {
-            var item = _kindernRepository.FirstOrDefault(x => x.Id == id);
+            var item = _kindernRepository.Table().Include(x=>x.Children).FirstOrDefault(x => x.Id == id);
             return item;
         }
 
