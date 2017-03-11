@@ -13,6 +13,7 @@ namespace DomainLib.Repository
     public class Repository <T>: IDisposable, IRepository<T> where T : class
     {
         private EfContext Context { get; set; }
+        private IDbSet<T> _entities;
 
 
         public Repository(EfContext context)
@@ -20,14 +21,32 @@ namespace DomainLib.Repository
             Context = context;
         }
 
+
+        protected IDbSet<T> Entities
+        {
+            get { return _entities ?? (_entities = Context.Set<T>()); }
+        }
+        public IQueryable<T> Table
+        {
+            get
+            {
+                return Entities.AsExpandable();
+            }
+        }
+
         void IDisposable.Dispose()
         {
             if (Context != null) Context.Dispose();
         }
 
+        IQueryable<T> IRepository<T>.Table()
+        {
+            return Table;
+        }
+
         void IRepository<T>.Add(T entity)
         {
-            Context.Set<T>().Add(entity);
+            Entities.Add(entity);
             Context.Entry(entity).State = System.Data.Entity.EntityState.Added;
 
             Context.SaveChanges();
@@ -36,15 +55,15 @@ namespace DomainLib.Repository
 
         void IRepository<T>.AddOrUpdate(T entity)
         {
-            var current = Context.Set<T>().Find(entity);
+            var current = Entities.Find(entity);
             if (current == null)
             {
-                Context.Set<T>().Add(entity);
+                Entities.Add(entity);
                 Context.Entry(entity).State = System.Data.Entity.EntityState.Added;
             }
             else
             {
-                Context.Set<T>().Attach(entity);
+                Entities.Attach(entity);
                 Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
             }
 
@@ -54,7 +73,7 @@ namespace DomainLib.Repository
 
         void IRepository<T>.Update(T entity)
         {
-            Context.Set<T>().Attach(entity);
+            Entities.Attach(entity);
             Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
 
             Context.SaveChanges();
@@ -72,15 +91,21 @@ namespace DomainLib.Repository
 
         void IRepository<T>.Remove(T entity)
         {
-            Context.Set<T>().Remove(entity);
-            Context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+            try
+            {
+                Entities.Remove(entity);
+                Context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
 
-            Context.SaveChanges();
+                Context.SaveChanges();
+            } catch(Exception ex)
+            {
+                var e = ex;
+            }
         }
 
         void IRepository<T>.Remove(IEnumerable<T> entities)
         {
-            var context = Context.Set<T>();
+            var context = Entities;
             foreach (var item in entities)
             {
                 context.Remove(item);
@@ -93,42 +118,42 @@ namespace DomainLib.Repository
 
         T IRepository<T>.Find(T entity)
         {
-            return Context.Set<T>().Find(entity);
+            return Entities.Find(entity);
         }
 
         IEnumerable<T> IRepository<T>.GetAll()
         {
-            return Context.Set<T>().AsExpandable();
+            return Entities;
         }
 
         IEnumerable<T> IRepository<T>.Where(Expression<Func<T, bool>> predicate)
         {
-            return Context.Set<T>().AsExpandable().Where(predicate);
+            return Entities.Where(predicate);
         }
 
         bool IRepository<T>.Any(Expression<Func<T, bool>> predicate)
         {
-            return Context.Set<T>().AsExpandable().Any(predicate);
+            return Entities.Any(predicate);
         }
 
         T IRepository<T>.FirstOrDefault(Expression<Func<T, bool>> predicate)
         {
-            return Context.Set<T>().FirstOrDefault(predicate);
+            return Entities.FirstOrDefault(predicate);
         }
 
         int IRepository<T>.Count(Expression<Func<T, bool>> predicate)
         {
-            return Context.Set<T>().Count(predicate);
+            return Entities.Count(predicate);
         }
 
-        IQueryable<T> IRepository<T>.Include(string field)
+        IQueryable<T> IRepository<T>.Include(string property)
         {
-            return Context.Set<T>().AsExpandable().Include(field);
+            return Entities.Include(property);
         }
 
         IQueryable<T> IRepository<T>.Take(int count)
         {
-            return Context.Set<T>().Take(count);
+            return Entities.Take(count);
         }
     }
 }

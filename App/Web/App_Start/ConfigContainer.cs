@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
+using AutoMapper;
 using DomainLib.Context;
 using DomainLib.Repository;
 using DomainLib.Services;
@@ -25,7 +26,7 @@ namespace Web.App_Start
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            builder.RegisterType<EfContext>().AsSelf().InstancePerRequest();
+            //builder.RegisterType<EfContext>().AsSelf().InstancePerRequest();
 
             builder.RegisterType<EfContext>().AsSelf().InstancePerLifetimeScope();
 
@@ -36,6 +37,7 @@ namespace Web.App_Start
             builder.RegisterType<KindergardernService>().As<IKindergardenService>().InstancePerRequest();
             builder.RegisterType<ChildService>().As<IChildService>().InstancePerRequest();
 
+            //builder.RegisterModule(new MapperContainer());
             // BUILD THE CONTAINER
             var container = builder.Build();
 

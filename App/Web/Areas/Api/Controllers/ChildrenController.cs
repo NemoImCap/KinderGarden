@@ -5,6 +5,8 @@ using System.Net;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Web.Http;
+using System.Web.Security.AntiXss;
+using AutoMapper;
 using Web.Models;
 
 namespace Web.Areas.Api.Controllers
@@ -13,6 +15,7 @@ namespace Web.Areas.Api.Controllers
     {
         private readonly IChildService _childService;
         private readonly IKindergardenService _kindergardenService;
+        //private readonly IMapper mapper;
 
         public ChildrenController(IChildService childService, IKindergardenService kindergardenService)
         {
@@ -69,6 +72,7 @@ namespace Web.Areas.Api.Controllers
                 model.Kindergarden = garten;
             }
             _childService.UpdteChild(entity);
+            //var mapped = mapper.Map<ChildModel, Child>(model);
             return Ok(model);
         }
 
@@ -76,7 +80,8 @@ namespace Web.Areas.Api.Controllers
         public IHttpActionResult GetChildren([FromUri] int? gartenId, int? gartenNumber, string search = "", int age = 0, int page = 1)
         {
             var result = _childService.GetChildren(gartenId, gartenNumber, age, search, page);
-            return Ok(result);
+            var mapped = Mapper.Map<IEnumerable<Child>, List<ChildModel>>(result);
+            return Ok(mapped);
         }
     }
 }

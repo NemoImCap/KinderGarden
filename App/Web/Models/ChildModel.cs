@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using AutoMapper;
 
 namespace Web.Models
 {
@@ -35,6 +36,8 @@ namespace Web.Models
             get;
             set;
         }
+
+        public string Combine { get; set; }
 
         public string KindergardenAddress { get; set; }
         public int? KindergratenNumber { get; set; }

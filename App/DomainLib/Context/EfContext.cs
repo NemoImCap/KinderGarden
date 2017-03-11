@@ -12,7 +12,9 @@ namespace DomainLib.Context
     {
         public EfContext()
         {
-            this.Configuration.LazyLoadingEnabled = false; 
+             Configuration.LazyLoadingEnabled = false; 
+             Configuration.AutoDetectChangesEnabled = true;
+             Configuration.ProxyCreationEnabled = true;
         }
 
         public DbSet<Kindergarden> Kindergardens { get; set; }
@@ -23,9 +25,9 @@ namespace DomainLib.Context
         {
 
             modelBuilder.Entity<Child>().HasOptional(x => x.Kindergarden); 
-        modelBuilder.Entity<Kindergarden>()
+            modelBuilder.Entity<Kindergarden>()
                     .HasMany<Child>(s => s.Children) 
-                    .WithRequired(s => s.Kindergarden)
+                    .WithOptional(s => s.Kindergarden)
                     .HasForeignKey(s => s.GartenId)
                     .WillCascadeOnDelete(false);
         }

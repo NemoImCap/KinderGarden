@@ -5,6 +5,7 @@ E:\Deploy\App\Web\bin\Antlr3.Runtime.dll
 E:\Deploy\App\Web\bin\Autofac.dll
 E:\Deploy\App\Web\bin\Autofac.Integration.Mvc.dll
 E:\Deploy\App\Web\bin\Autofac.Integration.WebApi.dll
+E:\Deploy\App\Web\bin\AutoMapper.dll
 E:\Deploy\App\Web\bin\DomainLib.dll
 E:\Deploy\App\Web\bin\EntityFramework.dll
 E:\Deploy\App\Web\bin\EntityFramework.SqlServer.dll
@@ -28,6 +29,7 @@ E:\Deploy\App\Web\bin\Antlr3.Runtime.pdb
 E:\Deploy\App\Web\bin\Autofac.xml
 E:\Deploy\App\Web\bin\Autofac.Integration.Mvc.xml
 E:\Deploy\App\Web\bin\Autofac.Integration.WebApi.xml
+E:\Deploy\App\Web\bin\AutoMapper.xml
 E:\Deploy\App\Web\bin\EntityFramework.xml
 E:\Deploy\App\Web\bin\EntityFramework.SqlServer.xml
 E:\Deploy\App\Web\bin\LinqKit.xml
@@ -52,3 +54,4 @@ E:\Deploy\App\Web\bin\ru\System.Web.WebPages.Razor.resources.dll
 E:\Deploy\App\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 E:\Deploy\App\Web\obj\Debug\Web.dll
 E:\Deploy\App\Web\obj\Debug\Web.pdb
+E:\Deploy\App\Web\bin\Microsoft.Web.Infrastructure.dll

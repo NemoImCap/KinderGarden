@@ -1,3 +1,4 @@
+E:\Deploy\App\DomainLib\bin\Debug\EntityFramework.xml
 E:\Deploy\App\DomainLib\bin\Debug\DomainLib.dll.config
 E:\Deploy\App\DomainLib\bin\Debug\DomainLib.dll
 E:\Deploy\App\DomainLib\bin\Debug\DomainLib.pdb
@@ -15,7 +16,6 @@ E:\Deploy\App\DomainLib\bin\Debug\System.Web.WebPages.dll
 E:\Deploy\App\DomainLib\bin\Debug\System.Web.WebPages.Razor.dll
 E:\Deploy\App\DomainLib\bin\Debug\Autofac.xml
 E:\Deploy\App\DomainLib\bin\Debug\Autofac.Integration.Mvc.xml
-E:\Deploy\App\DomainLib\bin\Debug\EntityFramework.xml
 E:\Deploy\App\DomainLib\bin\Debug\EntityFramework.SqlServer.xml
 E:\Deploy\App\DomainLib\bin\Debug\LinqKit.xml
 E:\Deploy\App\DomainLib\bin\Debug\System.Web.Helpers.xml
@@ -30,7 +30,6 @@ E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.Razor.resources.dll
 E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.WebPages.resources.dll
 E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.WebPages.Deployment.resources.dll
 E:\Deploy\App\DomainLib\bin\Debug\ru\System.Web.WebPages.Razor.resources.dll
-E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.InitDb.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.UpdateEntitiesLinks.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.CorrectKindergarten1.resources
@@ -39,3 +38,7 @@ E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCaskade.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csproj.GenerateResource.Cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.dll
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.pdb
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.SampleMigrations.resources
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCascade.resources
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCascadeTrue.resources
