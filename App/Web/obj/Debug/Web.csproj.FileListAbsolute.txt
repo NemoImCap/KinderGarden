@@ -54,4 +54,3 @@ E:\Deploy\App\Web\bin\ru\System.Web.WebPages.Razor.resources.dll
 E:\Deploy\App\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 E:\Deploy\App\Web\obj\Debug\Web.dll
 E:\Deploy\App\Web\obj\Debug\Web.pdb
-E:\Deploy\App\Web\bin\Microsoft.Web.Infrastructure.dll
