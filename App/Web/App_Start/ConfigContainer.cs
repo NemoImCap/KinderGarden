@@ -26,8 +26,6 @@ namespace Web.App_Start
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
 
-            //builder.RegisterType<EfContext>().AsSelf().InstancePerRequest();
-
             builder.RegisterType<EfContext>().AsSelf().InstancePerLifetimeScope();
 
             // Generic Repository Registration
@@ -36,8 +34,6 @@ namespace Web.App_Start
 
             builder.RegisterType<KindergardernService>().As<IKindergardenService>().InstancePerRequest();
             builder.RegisterType<ChildService>().As<IChildService>().InstancePerRequest();
-
-            //builder.RegisterModule(new MapperContainer());
             // BUILD THE CONTAINER
             var container = builder.Build();
 
