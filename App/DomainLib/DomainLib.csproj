@@ -104,21 +104,13 @@
     <Compile Include="Migrations\201702181057104_CascadeDelete.Designer.cs">
       <DependentUpon>201702181057104_CascadeDelete.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201703090726504_ChangeCaskade.cs" />
-    <Compile Include="Migrations\201703090726504_ChangeCaskade.Designer.cs">
-      <DependentUpon>201703090726504_ChangeCaskade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703100848424_SampleMigrations.cs" />
-    <Compile Include="Migrations\201703100848424_SampleMigrations.Designer.cs">
-      <DependentUpon>201703100848424_SampleMigrations.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703100927513_ChangeCascade.cs" />
-    <Compile Include="Migrations\201703100927513_ChangeCascade.Designer.cs">
-      <DependentUpon>201703100927513_ChangeCascade.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201703100929542_ChangeCascadeTrue.cs" />
     <Compile Include="Migrations\201703100929542_ChangeCascadeTrue.Designer.cs">
       <DependentUpon>201703100929542_ChangeCascadeTrue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703131216147_Index.cs" />
+    <Compile Include="Migrations\201703131216147_Index.Designer.cs">
+      <DependentUpon>201703131216147_Index.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,17 +137,11 @@
     <EmbeddedResource Include="Migrations\201702181057104_CascadeDelete.resx">
       <DependentUpon>201702181057104_CascadeDelete.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703090726504_ChangeCaskade.resx">
-      <DependentUpon>201703090726504_ChangeCaskade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703100848424_SampleMigrations.resx">
-      <DependentUpon>201703100848424_SampleMigrations.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703100927513_ChangeCascade.resx">
-      <DependentUpon>201703100927513_ChangeCascade.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703100929542_ChangeCascadeTrue.resx">
       <DependentUpon>201703100929542_ChangeCascadeTrue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703131216147_Index.resx">
+      <DependentUpon>201703131216147_Index.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

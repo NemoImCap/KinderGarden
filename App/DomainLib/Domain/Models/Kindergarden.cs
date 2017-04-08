@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
@@ -28,6 +29,7 @@ public class Kindergarden
         set;
     }
 
+    [Index("IX_GartenNumberIndex")]
     public virtual int Number
     {
         get;

@@ -34,11 +34,9 @@ E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.InitDb.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.UpdateEntitiesLinks.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.CorrectKindergarten1.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.CascadeDelete.resources
-E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCaskade.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csproj.GenerateResource.Cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.dll
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.pdb
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
-E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.SampleMigrations.resources
-E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCascade.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCascadeTrue.resources
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.Index.resources

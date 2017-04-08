@@ -7,13 +7,13 @@ namespace DomainLib.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ChangeCascade : IMigrationMetadata
+    public sealed partial class Index : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ChangeCascade));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Index));
         
         string IMigrationMetadata.Id
         {
-            get { return "201703100927513_ChangeCascade"; }
+            get { return "201703131216147_Index"; }
         }
         
         string IMigrationMetadata.Source
