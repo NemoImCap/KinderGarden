@@ -52,3 +52,5 @@ E:\Deploy\App\Web\bin\ru\System.Web.WebPages.Razor.resources.dll
 E:\Deploy\App\Web\obj\Release\Web.csprojResolveAssemblyReference.cache
 E:\Deploy\App\Web\obj\Release\Web.dll
 E:\Deploy\App\Web\obj\Release\Web.pdb
+E:\Deploy\App\Web\bin\AutoMapper.dll
+E:\Deploy\App\Web\bin\AutoMapper.xml

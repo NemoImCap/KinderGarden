@@ -36,3 +36,7 @@ E:\Deploy\App\DomainLib\obj\Release\DomainLib.Migrations.UpdateEntitiesLinks.res
 E:\Deploy\App\DomainLib\obj\Release\DomainLib.csproj.GenerateResource.Cache
 E:\Deploy\App\DomainLib\obj\Release\DomainLib.dll
 E:\Deploy\App\DomainLib\obj\Release\DomainLib.pdb
+E:\Deploy\App\DomainLib\obj\Release\DomainLib.Migrations.CorrectKindergarten1.resources
+E:\Deploy\App\DomainLib\obj\Release\DomainLib.Migrations.CascadeDelete.resources
+E:\Deploy\App\DomainLib\obj\Release\DomainLib.Migrations.ChangeCascadeTrue.resources
+E:\Deploy\App\DomainLib\obj\Release\DomainLib.Migrations.Index.resources

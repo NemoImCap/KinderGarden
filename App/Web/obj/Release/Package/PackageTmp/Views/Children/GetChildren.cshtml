@@ -31,17 +31,13 @@
         </thead>
         <tbody>
             <tr ng-repeat="child in Children" class="animated fadeIn">
-                <td>
-                    <strong>{{child.FirstName}}</strong>
+                <td ng-bind="child.FirstName">
                 </td>
-                <td>
-                    {{child.LastName}}
+                <td ng-bind="child.LastName">
                 </td>
-                <td>
-                    {{child.MiddleName}}
+                <td ng-bind="child.MiddleName">
                 </td>
-                <td>
-                    {{child.Age}}
+                <td ng-bind="child.Age">
                 </td>
                 <td>
                     <div class="btn-group">
@@ -58,9 +54,6 @@
             </tr>
         </tfoot>
     </table>
-    <div class="alert alert-warning animated fadeInDown" ng-show="!Children.length">
-        <strong>Warning </strong> There is no children in kindergarten
-    </div>
 </div>
 
 

@@ -15,7 +15,7 @@
     })
     .constant("appSettings", {
         "serviceUrl": function (currentUrl) {
-            var url = currentUrl.indexOf("localhost") > -1 ? "http://localhost:57084/" : window.location.origin;
+            var url = window.location.origin;
             return url;
         },
         //Kindergarten

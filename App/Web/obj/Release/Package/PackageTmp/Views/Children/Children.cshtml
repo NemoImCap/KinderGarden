@@ -44,17 +44,12 @@
         </thead>
         <tbody>
             <tr ng-repeat="child in Children" class="animated fadeIn">
-                <td>
-                    {{child.FirstName}}
+                <td ng-bind="child.FirstName"></td>
+                <td ng-bind="child.LastName">
                 </td>
-                <td>
-                    {{child.LastName}}
+                <td ng-bind="child.MiddleName">
                 </td>
-                <td>
-                    {{child.MiddleName}}
-                </td>
-                <td>
-                    {{child.Age}}
+                <td ng-bind="child.Age">
                 </td>
                 <td>
                     {{child.Kindergarden.Address ? child.Kindergarden.Address : 'Not considered'}}

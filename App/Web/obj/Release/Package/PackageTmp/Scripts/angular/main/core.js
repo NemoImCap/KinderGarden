@@ -15,20 +15,20 @@
     })
     .constant("appSettings", {
         "serviceUrl": function (currentUrl) {
-            var url = currentUrl.indexOf("localhost") > -1 ? "http://localhost:57084/" : "";
+            var url = window.location.origin;
             return url;
         },
         //Kindergarten
-        "GetKindergartens": "api/Kindergarden/GetKinderGardens/?",
-        "GetKindergartensNumbers": 'api/Kindergarden/GetKindergartensNumbers',
-        "CreateKindergarten": 'api/Kindergarden/CreateGarten',
-        "DeleteKindergarten": 'api/Kindergarden/DeleteKindergaten',
-        "UpdateKindergarten": 'api/Kindergarden/UpdateKindergarten',
+        "GetKindergartens": "/app-api/Kindergarden/GetKinderGardens/?",
+        "GetKindergartensNumbers": '/app-api/Kindergarden/GetKindergartensNumbers',
+        "CreateKindergarten": '/app-api/Kindergarden/CreateGarten',
+        "DeleteKindergarten": '/app-api/Kindergarden/DeleteKindergaten',
+        "UpdateKindergarten": '/app-api/Kindergarden/UpdateKindergarten',
         //Children
-        "CreateChild": 'api/Children/CreateChild',
-        "GetChildren": 'api/Children/GetChildren/?',
-        "UpdateChild": 'api/Children/UpdateChild/',
-        "DeleteChild": 'api/Children/DeleteChild/'
+        "CreateChild": '/app-api/Children/CreateChild',
+        "GetChildren": '/app-api/Children/GetChildren/?',
+        "UpdateChild": '/app-api/Children/UpdateChild/',
+        "DeleteChild": '/app-api/Children/DeleteChild/'
     });
 
 //Services

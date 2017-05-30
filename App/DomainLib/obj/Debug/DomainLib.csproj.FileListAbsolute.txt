@@ -37,6 +37,6 @@ E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.CascadeDelete.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csproj.GenerateResource.Cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.dll
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.pdb
-E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.ChangeCascadeTrue.resources
 E:\Deploy\App\DomainLib\obj\Debug\DomainLib.Migrations.Index.resources
+E:\Deploy\App\DomainLib\obj\Debug\DomainLib.csprojResolveAssemblyReference.cache
