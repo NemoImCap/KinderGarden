@@ -3,16 +3,13 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using DomainLib.Context;
 using LinqKit;
 
 namespace DomainLib.Repository
 {
-    public class Repository <T>: IDisposable, IRepository<T> where T : class
+    public class Repository<T> : IDisposable, IRepository<T> where T : class
     {
-        private EfContext Context { get; set; }
         private IDbSet<T> _entities;
 
 
@@ -21,17 +18,17 @@ namespace DomainLib.Repository
             Context = context;
         }
 
+        private EfContext Context { get; set; }
+
 
         protected IDbSet<T> Entities
         {
             get { return _entities ?? (_entities = Context.Set<T>()); }
         }
+
         public IQueryable<T> Table
         {
-            get
-            {
-                return Entities.AsExpandable();
-            }
+            get { return Entities.AsExpandable(); }
         }
 
         void IDisposable.Dispose()
@@ -47,7 +44,7 @@ namespace DomainLib.Repository
         void IRepository<T>.Add(T entity)
         {
             Entities.Add(entity);
-            Context.Entry(entity).State = System.Data.Entity.EntityState.Added;
+            Context.Entry(entity).State = EntityState.Added;
 
             Context.SaveChanges();
         }
@@ -59,12 +56,12 @@ namespace DomainLib.Repository
             if (current == null)
             {
                 Entities.Add(entity);
-                Context.Entry(entity).State = System.Data.Entity.EntityState.Added;
+                Context.Entry(entity).State = EntityState.Added;
             }
             else
             {
                 Entities.Attach(entity);
-                Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+                Context.Entry(entity).State = EntityState.Modified;
             }
 
             Context.SaveChanges();
@@ -74,7 +71,7 @@ namespace DomainLib.Repository
         void IRepository<T>.Update(T entity)
         {
             Entities.Attach(entity);
-            Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
+            Context.Entry(entity).State = EntityState.Modified;
 
             Context.SaveChanges();
         }
@@ -83,9 +80,7 @@ namespace DomainLib.Repository
         {
             Context.Set<T>().RemoveRange(entities);
             foreach (var entity in entities)
-            {
-                Context.Entry(entity).State = System.Data.Entity.EntityState.Modified;
-            }
+                Context.Entry(entity).State = EntityState.Modified;
             Context.SaveChanges();
         }
 
@@ -94,10 +89,11 @@ namespace DomainLib.Repository
             try
             {
                 Entities.Remove(entity);
-                Context.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
+                Context.Entry(entity).State = EntityState.Deleted;
 
                 Context.SaveChanges();
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 var e = ex;
             }
@@ -109,7 +105,7 @@ namespace DomainLib.Repository
             foreach (var item in entities)
             {
                 context.Remove(item);
-                Context.Entry(item).State = System.Data.Entity.EntityState.Deleted;
+                Context.Entry(item).State = EntityState.Deleted;
             }
 
             Context.SaveChanges();

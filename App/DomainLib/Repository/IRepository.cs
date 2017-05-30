@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DomainLib.Repository
 {
-    public interface IRepository <T>
+    public interface IRepository<T>
     {
         IQueryable<T> Table();
         void Add(T entity);
