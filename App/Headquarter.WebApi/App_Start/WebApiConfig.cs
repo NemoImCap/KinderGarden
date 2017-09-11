@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace Web
+namespace Headquarter.WebApi
 {
     public static class WebApiConfig
     {
@@ -10,12 +10,9 @@ namespace Web
 
             config.Routes.MapHttpRoute(
                 "DefaultApi",
-                "app-api/{controller}/{action}/{id}",
+                "api/{controller}/{id}",
                 new {id = RouteParameter.Optional}
             );
-
-            config.IncludeErrorDetailPolicy = IncludeErrorDetailPolicy.Always;
-            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }

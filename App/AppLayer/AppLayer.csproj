@@ -126,6 +126,14 @@
       <Project>{A665D6D6-98E9-4BE1-8A4E-5FDF5C4716BD}</Project>
       <Name>DomainLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PublisherService.Interfaces\PublisherService.Interfaces.csproj">
+      <Project>{04c7e73d-4e9c-4ef1-a6cd-74a9ca03c547}</Project>
+      <Name>PublisherService.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PublisherService\PublisherService.csproj">
+      <Project>{3ce2761d-4079-4cc6-93ef-013e169c2ea8}</Project>
+      <Name>PublisherService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

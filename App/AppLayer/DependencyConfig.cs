@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Reflection;
 using System.Web.Http;
 using System.Web.Mvc;
 using Autofac;
@@ -12,12 +7,14 @@ using Autofac.Integration.WebApi;
 using DomainLib.Context;
 using DomainLib.Repository;
 using DomainLib.Services;
+using PublisherService.Announcement;
+using PublisherService.Interfaces.Announcement.Managers;
 
 namespace AppLayer
 {
-    public class DependencyConfig
+    public static class DependencyConfig
     {
-        public void ConfigContainer(Assembly [] assembly)
+        public static void ConfigContainer(Assembly[] assembly)
         {
             var builder = new ContainerBuilder();
 
@@ -33,6 +30,7 @@ namespace AppLayer
 
             builder.RegisterType<KindergardernService>().As<IKindergardenService>().InstancePerRequest();
             builder.RegisterType<ChildService>().As<IChildService>().InstancePerRequest();
+            builder.RegisterType<AnnouncemenManager>().As<IAnnouncementManager>().InstancePerLifetimeScope();
             // BUILD THE CONTAINER
             var container = builder.Build();
 

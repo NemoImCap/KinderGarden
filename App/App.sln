@@ -11,6 +11,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainLib", "DomainLib\Doma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLayer", "AppLayer\AppLayer.csproj", "{F9A64BC9-A489-4E27-AA0A-39BF41DF49F5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IntegrationPoints", "IntegrationPoints", "{84ED30BE-4C9A-413D-BEFA-3685F2B2C113}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Headquarter.WebApi", "Headquarter.WebApi\Headquarter.WebApi.csproj", "{C1FA52A0-2B6D-4261-B067-80B5FC79115D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MessageBusLayer", "MessageBusLayer", "{C9F37BE2-212B-4587-9238-8083E74A5250}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherService", "PublisherService\PublisherService.csproj", "{3CE2761D-4079-4CC6-93EF-013E169C2EA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherService.Interfaces", "PublisherService.Interfaces\PublisherService.Interfaces.csproj", "{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,8 +43,25 @@ Global
 		{F9A64BC9-A489-4E27-AA0A-39BF41DF49F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9A64BC9-A489-4E27-AA0A-39BF41DF49F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F9A64BC9-A489-4E27-AA0A-39BF41DF49F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1FA52A0-2B6D-4261-B067-80B5FC79115D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1FA52A0-2B6D-4261-B067-80B5FC79115D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1FA52A0-2B6D-4261-B067-80B5FC79115D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1FA52A0-2B6D-4261-B067-80B5FC79115D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE2761D-4079-4CC6-93EF-013E169C2EA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE2761D-4079-4CC6-93EF-013E169C2EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE2761D-4079-4CC6-93EF-013E169C2EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE2761D-4079-4CC6-93EF-013E169C2EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C1FA52A0-2B6D-4261-B067-80B5FC79115D} = {84ED30BE-4C9A-413D-BEFA-3685F2B2C113}
+		{3CE2761D-4079-4CC6-93EF-013E169C2EA8} = {C9F37BE2-212B-4587-9238-8083E74A5250}
+		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547} = {C9F37BE2-212B-4587-9238-8083E74A5250}
 	EndGlobalSection
 EndGlobal

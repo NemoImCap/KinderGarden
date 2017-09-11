@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Web.Models;
 
-namespace Web.App_Start
+namespace Web
 {
     public class MapperContainer
     {

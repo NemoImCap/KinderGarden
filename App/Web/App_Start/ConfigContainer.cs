@@ -8,9 +8,8 @@ namespace Web
     {
         public static void Configure()
         {
-            var dependencyContainer = new DependencyConfig();
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            dependencyContainer.ConfigContainer(assemblies);
+            DependencyConfig.ConfigContainer(assemblies);
         }
     }
 }

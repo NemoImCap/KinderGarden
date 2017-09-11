@@ -1,39 +1,36 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace Web.App_Start
+namespace Web
 {
     public class BundleConfig
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-
-            const string ANGULAR_APP_ROOT = "~/Scripts/angular/";
-            const string ANGULAR_VENDORS_ROOT = "~/Assets/framework/";
-            const string ANGULAR_MAIN = "~/Scripts/angular/main/";
+            const string angularAppRoot = "~/Scripts/angular/";
+            const string angularVendorsRoot = "~/Assets/framework/";
+            const string angularMain = "~/Scripts/angular/main/";
 
 
             //Angular init 
-            bundles.Add(new ScriptBundle("~/Angular/").Include(ANGULAR_VENDORS_ROOT + "angular/angular.min.js").Include(ANGULAR_VENDORS_ROOT + "angular-ui-bs/ui-bootstrap-2.5.0.min.js").IncludeDirectory(ANGULAR_VENDORS_ROOT, "*.js", searchSubdirectories: true));
-            bundles.Add(new ScriptBundle("~/AngularApp/").IncludeDirectory(ANGULAR_MAIN, "*.js", searchSubdirectories: true));
+            bundles.Add(new ScriptBundle("~/Angular/").Include(angularVendorsRoot + "angular/angular.min.js")
+                .Include(angularVendorsRoot + "angular-ui-bs/ui-bootstrap-2.5.0.min.js")
+                .IncludeDirectory(angularVendorsRoot, "*.js", true));
+            bundles.Add(new ScriptBundle("~/AngularApp/").IncludeDirectory(angularMain, "*.js", true));
             bundles.Add(new ScriptBundle("~/AngularScript/")
-                .IncludeDirectory(ANGULAR_APP_ROOT + "common/", "*.js", searchSubdirectories: true)
-                .IncludeDirectory(ANGULAR_APP_ROOT + "controllers/", "*.js", searchSubdirectories: true));
+                .IncludeDirectory(angularAppRoot + "common/", "*.js", true)
+                .IncludeDirectory(angularAppRoot + "controllers/", "*.js", true));
 
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                    "~/Content/bootstrap.css",
-                    "~/Content/animate.min.css",
-                    "~/Content/site.css"));
+                "~/Content/bootstrap.css",
+                "~/Content/animate.min.css",
+                "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                      "~/Scripts/jquery-{version}.js"));
+                "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js"));
+                "~/Scripts/bootstrap.js"));
 
             BundleTable.EnableOptimizations = false;
         }
