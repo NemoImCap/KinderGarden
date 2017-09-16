@@ -23,8 +23,11 @@ namespace PublisherService.Interfaces.Queues
             {
                 using (var channel = connection.CreateModel())
                 {
+                    var properties = channel.CreateBasicProperties();
+                    properties.Persistent = true;
+
                     channel.QueueDeclare(queue: QueueName,
-                        durable: false,
+                        durable: true,
                         exclusive: false,
                         autoDelete: false,
                         arguments: null);
@@ -32,7 +35,7 @@ namespace PublisherService.Interfaces.Queues
 
                     channel.BasicPublish(exchange: "",
                         routingKey: QueueName,
-                        basicProperties: null,
+                        basicProperties: properties,
                         body: body);
                 }
             }

@@ -11,7 +11,7 @@ namespace PublisherService.Announcement.Models
 
         public void PublishQueue()
         {
-            CreateQueue("Hello Bill");
+            CreateQueue("Test write");
         }
     }
 }

@@ -5,17 +5,16 @@ namespace Web.Controllers
 {
     public class ChildrenController : Controller
     {
-        private readonly IConsumerManager _consumerManager;
+        private readonly IAnnouncemenConsumerManager _consumerManager;
 
-        public ChildrenController(IConsumerManager consumerManager)
+        public ChildrenController(IAnnouncemenConsumerManager consumerManager)
         {
-            this._consumerManager = consumerManager;
+            _consumerManager = consumerManager;
         }
 
         // GET: Children
         public ActionResult Children()
         {
-            _consumerManager.ReciveMessage();
             return View();
         }
 

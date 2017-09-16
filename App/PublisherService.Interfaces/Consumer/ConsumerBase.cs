@@ -8,7 +8,9 @@
             QueueName = queueName;
         }
 
-        private string HostName { get; }
-        private string QueueName { get; }
+        public string HostName { get; }
+        public string QueueName { get; }
+
+        public abstract void OnReciveMessageFromQueue();
     }
 }

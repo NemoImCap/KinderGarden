@@ -5,6 +5,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using Autofac.Integration.WebApi;
 using DomainLib.Context;
+using DomainLib.Domain.Services;
 using DomainLib.Repository;
 using DomainLib.Services;
 using PublisherService.Announcement.Managers;
@@ -32,12 +33,13 @@ namespace AppLayer
 
             builder.RegisterType<KindergardernService>().As<IKindergardenService>().InstancePerRequest();
             builder.RegisterType<ChildService>().As<IChildService>().InstancePerRequest();
+            builder.RegisterType<AnnouncemenService>().As<IAnnouncemenService>().InstancePerRequest();
 
             //Queueis
-            builder.RegisterType<AnnouncemenManager>().As<IAnnouncementManager>().InstancePerLifetimeScope();
+            builder.RegisterType<AnnouncemenManager>().As<IAnnouncementManager>().SingleInstance();
 
             //Consumers
-            builder.RegisterType<AnnouncemenConsumer>().As<IConsumerManager>().SingleInstance();
+            builder.RegisterType<AnnouncemenConsumer>().As<IAnnouncemenConsumerManager>().InstancePerRequest().OnActivating(x=>x.Instance.ReciveMessage());
             // BUILD THE CONTAINER
             var container = builder.Build();
 

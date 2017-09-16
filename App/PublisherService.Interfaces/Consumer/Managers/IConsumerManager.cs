@@ -1,6 +1,6 @@
 ﻿namespace PublisherService.Interfaces.Consumer.Managers
 {
-    public interface IConsumerManager
+    public interface IAnnouncemenConsumerManager
     {
         void ReciveMessage();
     }

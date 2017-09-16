@@ -31,8 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="LinqKit, Version=1.1.9.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
       <HintPath>..\packages\LinqKit.1.1.9.0\lib\net45\LinqKit.dll</HintPath>
@@ -61,38 +66,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\EfContext.cs" />
+    <Compile Include="Domain\Models\Announcemen.cs" />
     <Compile Include="Domain\Models\Child.cs" />
     <Compile Include="Domain\Models\Kindergarden.cs" />
+    <Compile Include="Domain\Services\IAnnouncemenService.cs" />
     <Compile Include="Domain\Services\IChildService.cs" />
     <Compile Include="Domain\Services\IKindergardenService.cs" />
-    <Compile Include="Migrations\201702090958525_InitDb.cs" />
-    <Compile Include="Migrations\201702090958525_InitDb.Designer.cs">
-      <DependentUpon>201702090958525_InitDb.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702121713322_UpdateEntitiesLinks.cs" />
-    <Compile Include="Migrations\201702121713322_UpdateEntitiesLinks.Designer.cs">
-      <DependentUpon>201702121713322_UpdateEntitiesLinks.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702181015203_CorrectKindergarten1.cs" />
-    <Compile Include="Migrations\201702181015203_CorrectKindergarten1.Designer.cs">
-      <DependentUpon>201702181015203_CorrectKindergarten1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702181057104_CascadeDelete.cs" />
-    <Compile Include="Migrations\201702181057104_CascadeDelete.Designer.cs">
-      <DependentUpon>201702181057104_CascadeDelete.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703100929542_ChangeCascadeTrue.cs" />
-    <Compile Include="Migrations\201703100929542_ChangeCascadeTrue.Designer.cs">
-      <DependentUpon>201703100929542_ChangeCascadeTrue.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703131216147_Index.cs" />
-    <Compile Include="Migrations\201703131216147_Index.Designer.cs">
-      <DependentUpon>201703131216147_Index.cs</DependentUpon>
+    <Compile Include="Migrations\201709160930538_Announcement.cs" />
+    <Compile Include="Migrations\201709160930538_Announcement.Designer.cs">
+      <DependentUpon>201709160930538_Announcement.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Services\AnnouncemenService.cs" />
     <Compile Include="Services\ChildService.cs" />
     <Compile Include="Services\KindergardernService.cs" />
     <Compile Include="Utils\PredicateBuilder.cs" />
@@ -102,26 +90,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702090958525_InitDb.resx">
-      <DependentUpon>201702090958525_InitDb.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702121713322_UpdateEntitiesLinks.resx">
-      <DependentUpon>201702121713322_UpdateEntitiesLinks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181015203_CorrectKindergarten1.resx">
-      <DependentUpon>201702181015203_CorrectKindergarten1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181057104_CascadeDelete.resx">
-      <DependentUpon>201702181057104_CascadeDelete.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703100929542_ChangeCascadeTrue.resx">
-      <DependentUpon>201703100929542_ChangeCascadeTrue.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703131216147_Index.resx">
-      <DependentUpon>201703131216147_Index.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201709160930538_Announcement.resx">
+      <DependentUpon>201709160930538_Announcement.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

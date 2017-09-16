@@ -59,6 +59,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\DomainLib\DomainLib.csproj">
+      <Project>{A665D6D6-98E9-4BE1-8A4E-5FDF5C4716BD}</Project>
+      <Name>DomainLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PublisherService.Interfaces\PublisherService.Interfaces.csproj">
       <Project>{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}</Project>
       <Name>PublisherService.Interfaces</Name>

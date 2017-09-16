@@ -246,6 +246,10 @@
       <Project>{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}</Project>
       <Name>PublisherService.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PublisherService\PublisherService.csproj">
+      <Project>{3CE2761D-4079-4CC6-93EF-013E169C2EA8}</Project>
+      <Name>PublisherService</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
