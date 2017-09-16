@@ -15,7 +15,7 @@ namespace Headquarter.WebApi.Controllers
         [HttpGet]
         public IHttpActionResult PublishMessage()
         {
-            _announcementManager.Publish();
+            _announcementManager.PublishAnnouncementQueue();
             return Ok("Published");
         }
     }

@@ -7,8 +7,10 @@ using Autofac.Integration.WebApi;
 using DomainLib.Context;
 using DomainLib.Repository;
 using DomainLib.Services;
-using PublisherService.Announcement;
+using PublisherService.Announcement.Managers;
+using PublisherService.Announcement.Models;
 using PublisherService.Interfaces.Announcement.Managers;
+using PublisherService.Interfaces.Consumer.Managers;
 
 namespace AppLayer
 {
@@ -30,7 +32,12 @@ namespace AppLayer
 
             builder.RegisterType<KindergardernService>().As<IKindergardenService>().InstancePerRequest();
             builder.RegisterType<ChildService>().As<IChildService>().InstancePerRequest();
+
+            //Queueis
             builder.RegisterType<AnnouncemenManager>().As<IAnnouncementManager>().InstancePerLifetimeScope();
+
+            //Consumers
+            builder.RegisterType<AnnouncemenConsumer>().As<IConsumerManager>().SingleInstance();
             // BUILD THE CONTAINER
             var container = builder.Build();
 

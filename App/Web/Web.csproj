@@ -242,6 +242,10 @@
       <Project>{a665d6d6-98e9-4be1-8a4e-5fdf5c4716bd}</Project>
       <Name>DomainLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PublisherService.Interfaces\PublisherService.Interfaces.csproj">
+      <Project>{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}</Project>
+      <Name>PublisherService.Interfaces</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

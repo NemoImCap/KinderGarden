@@ -2,8 +2,6 @@
 {
     public interface IAnnouncementManager
     {
-        void Publish();
-
-        string Receive();
+        void PublishAnnouncementQueue();
     }
 }
