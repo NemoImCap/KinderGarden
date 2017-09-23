@@ -18,7 +18,6 @@ namespace Web
             var autoMapper = new MapperContainer();
             autoMapper.InitMappings();
             ConfigContainer.Configure();
-
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
                 .ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters

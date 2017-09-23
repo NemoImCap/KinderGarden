@@ -1,5 +1,6 @@
 ﻿using System.IO;
 using System.Text;
+using System.Threading;
 using DomainLib.Domain.Services;
 using PublisherService.Interfaces.Consumer;
 using PublisherService.Interfaces.Consumer.Managers;
@@ -37,10 +38,6 @@ namespace PublisherService.Announcement.Models
                         var body = ea.Body;
 
                         var message = Encoding.UTF8.GetString(body);
-                        //_announcemenService.CreateAnnouncemen(message);
-                        var file = new StreamWriter("e:\\likes.txt", true);
-                        file.WriteLine(message);
-                        file.Close();
                         channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
                     };
                     channel.BasicConsume(QueueName, true, consumer);

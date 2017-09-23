@@ -1,41 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using AutoMapper;
-
-namespace Web.Models
+﻿namespace Web.Models
 {
     public class ChildModel
     {
+        public int Id { get; set; }
 
-        public int Id
-        {
-            get; set;
-        }
-        public string FirstName
-        {
-            get;
-            set;
-        }
+        public string FirstName { get; set; }
 
-        public string LastName
-        {
-            get;
-            set;
-        }
+        public string LastName { get; set; }
 
-        public string MiddleName
-        {
-            get;
-            set;
-        }
+        public string MiddleName { get; set; }
 
-        public int Age
-        {
-            get;
-            set;
-        }
+        public int Age { get; set; }
 
         public string Combine { get; set; }
 
@@ -44,10 +19,6 @@ namespace Web.Models
 
         public Kindergarden Kindergarden { get; set; }
 
-        public int GartenId
-        {
-            get;
-            set;
-        }
+        public int GartenId { get; set; }
     }
 }

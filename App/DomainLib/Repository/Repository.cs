@@ -21,10 +21,7 @@ namespace DomainLib.Repository
         private EfContext Context { get; set; }
 
 
-        protected IDbSet<T> Entities
-        {
-            get { return _entities ?? (_entities = Context.Set<T>()); }
-        }
+        private IDbSet<T> Entities => _entities ?? (_entities = Context.Set<T>());
 
         public IQueryable<T> Table
         {
