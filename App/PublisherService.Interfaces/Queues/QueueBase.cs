@@ -1,43 +1,25 @@
-﻿using System.Text;
-using RabbitMQ.Client;
+﻿using System;
+using EasyNetQ;
+using Messages;
 
 namespace PublisherService.Interfaces.Queues
 {
-    public abstract class QueueBase
+    public class QueueBase
     {
-        private string HostName { get; }
-        private string QueueName { get; }
-        protected QueueBase(string queueName, string hostName)
+        public void CreateQueue(string message)
         {
-            QueueName = queueName;
-            HostName = hostName;
-        }
-
-        protected void CreateQueue(string message)
-        {
-            var factory = new ConnectionFactory
+            try
             {
-                HostName = HostName
-            };
-            using (var connection = factory.CreateConnection())
-            {
-                using (var channel = connection.CreateModel())
+                using (var bus = RabbitHutch.CreateBus("host=localhost"))
                 {
-                    var properties = channel.CreateBasicProperties();
-                    properties.Persistent = true;
-
-                    channel.QueueDeclare(queue: QueueName,
-                        durable: true,
-                        exclusive: false,
-                        autoDelete: false,
-                        arguments: null);
-                    var body = Encoding.UTF8.GetBytes(message);
-
-                    channel.BasicPublish(exchange: "",
-                        routingKey: QueueName,
-                        basicProperties: properties,
-                        body: body);
+                    bus.Publish(new TextMessage {Text = message});
+                    //bus.Send("my.queue", "testMessage");
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
     }

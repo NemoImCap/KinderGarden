@@ -9,9 +9,8 @@ using DomainLib.Domain.Services;
 using DomainLib.Repository;
 using DomainLib.Services;
 using PublisherService.Announcement.Managers;
-using PublisherService.Announcement.Models;
 using PublisherService.Interfaces.Announcement.Managers;
-using PublisherService.Interfaces.Consumer.Managers;
+
 
 namespace AppLayer
 {
@@ -38,8 +37,6 @@ namespace AppLayer
             //Queueis
             builder.RegisterType<AnnouncemenManager>().As<IAnnouncementManager>().SingleInstance();
 
-            //Consumers
-            builder.RegisterType<AnnouncemenConsumer>().As<IAnnouncemenConsumerManager>().InstancePerRequest().OnActivating(x=>x.Instance.ReciveMessage());
             // BUILD THE CONTAINER
             var container = builder.Build();
 

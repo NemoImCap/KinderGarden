@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherService", "Publish
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PublisherService.Interfaces", "PublisherService.Interfaces\PublisherService.Interfaces.csproj", "{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Messages", "Messages", "{711752B0-66B8-496E-8CD5-B07FEACBD91F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Messages", "..\..\..\work\Messages\Messages\Messages\Messages.csproj", "{A21B630A-DF87-4C02-9F31-A7F27E37A899}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +59,10 @@ Global
 		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A21B630A-DF87-4C02-9F31-A7F27E37A899}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A21B630A-DF87-4C02-9F31-A7F27E37A899}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A21B630A-DF87-4C02-9F31-A7F27E37A899}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A21B630A-DF87-4C02-9F31-A7F27E37A899}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,5 +71,6 @@ Global
 		{C1FA52A0-2B6D-4261-B067-80B5FC79115D} = {84ED30BE-4C9A-413D-BEFA-3685F2B2C113}
 		{3CE2761D-4079-4CC6-93EF-013E169C2EA8} = {C9F37BE2-212B-4587-9238-8083E74A5250}
 		{04C7E73D-4E9C-4EF1-A6CD-74A9CA03C547} = {C9F37BE2-212B-4587-9238-8083E74A5250}
+		{A21B630A-DF87-4C02-9F31-A7F27E37A899} = {711752B0-66B8-496E-8CD5-B07FEACBD91F}
 	EndGlobalSection
 EndGlobal

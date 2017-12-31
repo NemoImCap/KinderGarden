@@ -3,15 +3,12 @@ using PublisherService.Interfaces.Queues.Managers;
 
 namespace PublisherService.Announcement.Models
 {
-    public class AnnouncemenQueue : QueueBase, IQueuePublishManager
+    public class AnnouncemenQueue : IQueuePublishManager
     {
-        public AnnouncemenQueue() : base("announcemen", "localhost")
-        {
-        }
-
         public void PublishQueue()
         {
-            CreateQueue("Test write");
+            var bus = new QueueBase();
+            bus.CreateQueue("TestMessage");
         }
     }
 }
