@@ -12,8 +12,8 @@ namespace PublisherService.Interfaces.Queues
             {
                 using (var bus = RabbitHutch.CreateBus("host=localhost"))
                 {
-                    bus.Publish(new TextMessage {Text = message});
-                    //bus.Send("my.queue", "testMessage");
+                    //bus.Publish(new TextMessage {Text = message});
+                    bus.Send("my.queue", message);
                 }
             }
             catch (Exception e)
