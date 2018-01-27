@@ -15,8 +15,6 @@ namespace Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            var autoMapper = new MapperContainer();
-            autoMapper.InitMappings();
             ConfigContainer.Configure();
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
                 .ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
