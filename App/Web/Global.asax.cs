@@ -4,7 +4,6 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using Newtonsoft.Json;
-using Web.App_Start;
 
 namespace Web
 {
@@ -16,10 +15,7 @@ namespace Web
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            var autoMapper = new MapperContainer();
-            autoMapper.InitMappings();
             ConfigContainer.Configure();
-
             GlobalConfiguration.Configuration.Formatters.JsonFormatter.SerializerSettings
                 .ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             GlobalConfiguration.Configuration.Formatters

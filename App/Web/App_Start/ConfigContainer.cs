@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Reflection;
-using AppLayer;
+using AppLayer.DependencyResolvers;
 
 namespace Web
 {
@@ -8,9 +7,8 @@ namespace Web
     {
         public static void Configure()
         {
-            var dependencyContainer = new DependencyConfig();
-            Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            dependencyContainer.ConfigContainer(assemblies);
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            WebAppResolver.ConfigContainer(assemblies);
         }
     }
 }
